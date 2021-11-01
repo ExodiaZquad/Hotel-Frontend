@@ -1,0 +1,6 @@
+export const ActionTypes = {
+  SET_ROOM_TYPES: "SET_ROOM_TYPES",
+  SET_ROOMS: "SET_ROOMS",
+  SELECTED_ROOM: "SELECTED_ROOM",
+  SET_USER: "SET_USER",
+};

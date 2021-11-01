@@ -26,10 +26,10 @@ const Routes = () => {
         <Route path="/rooms">
           <Rooms />
         </Route>
-        <Route path="/">
+        <Route path="/home">
           <Home />
         </Route>
-        <Redirect path="/" exact to="/home" />
+        <Redirect path="/" to="/home" />
       </Switch>
     </React.Fragment>
   );

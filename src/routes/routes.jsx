@@ -1,6 +1,5 @@
 import React from "react";
 import { Redirect, Switch, Route } from "react-router";
-import Booking from "../pages/booking";
 import Home from "../pages/home";
 import Login from "../pages/login";
 import Profile from "../pages/profile";
@@ -13,9 +12,6 @@ const Routes = () => {
       <Switch>
         <Route path="/login">
           <Login />
-        </Route>
-        <Route path="/booking">
-          <Booking />
         </Route>
         <Route path="/profile">
           <Profile />

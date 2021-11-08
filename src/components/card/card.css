@@ -1,0 +1,19 @@
+.card__blocks {
+  width: 315px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px #d1d1d1;
+  margin: 20px;
+}
+
+.card__header {
+  border-radius: 20px;
+}
+
+.card__img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.card__detail {
+  border-radius: 20px;
+}

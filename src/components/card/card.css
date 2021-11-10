@@ -1,19 +1,70 @@
+.card__radius {
+  border-radius: 20px;
+}
+
 .card__blocks {
-  width: 315px;
+  width: 35rem;
   border-radius: 20px;
   box-shadow: 0 4px 10px #d1d1d1;
   margin: 20px;
 }
 
 .card__header {
-  border-radius: 20px;
+  position: relative;
 }
 
+.card__number {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fe8a80;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
 .card__img {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 20px 20px 10px 10px;
+}
+
+.card__content {
+  position: relative;
+  padding: 1rem 1.5rem 1.4rem;
+}
+
+.card__name {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.card__detail__text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #bbbbbb;
+  margin-left: 1.1rem;
 }
 
 .card__detail {
+  display: flex;
+}
+
+.card__button {
+  position: absolute;
+  bottom: 14px;
+  right: 15px;
+
+  background-color: #00d3da;
+  padding: 0.5rem 2.4rem;
   border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.card__button:hover {
+  color: #fff;
+  background-color: #00b8be;
 }

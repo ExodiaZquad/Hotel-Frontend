@@ -4,10 +4,10 @@ import { FaUserAlt } from "react-icons/fa";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import "./card.css";
 
-const CardHeader = () => (
+const CardHeader = ({ link }) => (
   <div className="card__header ">
     <CardNumber />
-    <img src={room} alt="" className="card__img card__radius" />
+    <img src={link} alt="" className="card__img card__radius" />
   </div>
 );
 
@@ -22,7 +22,7 @@ const CardContent = () => (
     </div>
     <div className="card__detail">
       <FaMoneyBillAlt size={26} style={{ color: "#bbb" }} />
-      <div className="card__detail__text">1000 ~ 3000</div>
+      <div className="card__detail__text">2500</div>
     </div>
     <CardButton />
   </div>
@@ -31,14 +31,13 @@ const CardContent = () => (
 const CardButton = () => (
   <a className="card__button" href="./">
     Book
-    {/* <a class="card__button__text">Book</a> */}
   </a>
 );
 
-const Card = () => {
+const Card = ({ link }) => {
   return (
     <div className="card__blocks card__radius">
-      <CardHeader />
+      <CardHeader link={link} />
       <CardContent />
     </div>
   );

@@ -1,0 +1,79 @@
+.rooms__title {
+  font-size: 6rem;
+  font-weight: 600;
+  color: #00d3da;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.rooms__filters {
+  margin: 0 100px;
+}
+
+.rooms__input {
+  /* border: 0; */
+  width: 100%;
+  padding: 1rem 2rem 0.7rem;
+  padding-left: 4.3rem;
+  border-radius: 20px;
+  font-size: 1.6rem;
+  border-width: 0;
+  background-color: rgb(233, 233, 233);
+}
+
+.rooms__container {
+  /* margin: 0 5rem; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem 10rem;
+}
+
+/* Dropdown */
+.dropdown-toggle {
+  height: 100%;
+}
+
+.dropdown-toggle.btn-primary {
+  background-color: rgb(133, 133, 133);
+  color: black;
+}
+
+.dropdown-toggle.btn-primary:hover {
+  background-color: aqua;
+}
+
+.dropdown {
+  height: 100%;
+}
+
+.dropdown-toggle {
+  width: 12rem;
+  height: 100% !important;
+  border-radius: 20px !important;
+  border: 2px solid rgb(68, 68, 68) !important;
+}
+
+.search__icon {
+  position: absolute;
+  font-size: 2rem;
+  margin-top: 10px;
+  margin-left: 15px;
+  color: rgb(133, 133, 133);
+}
+
+/* Switch */
+.rooms__switch {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-check-label {
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+
+.form-check-input {
+  width: 5rem !important;
+  height: 2.5rem !important;
+}

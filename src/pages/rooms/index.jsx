@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import fakedata from "../../services/fakeData";
 import Card from "../../components/card";
 // import useFetch from "../../hooks/useFetch";
 import { Spinner } from "react-bootstrap";
 import { DropdownButton, Dropdown, Row, Col, Form } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import axios from "axios";
-
 import "./room.css";
 
 const SearchBar = ({ setSearch }) => {
@@ -27,7 +27,9 @@ const SearchBar = ({ setSearch }) => {
   );
 };
 
-const MyDropdown = ({ setSortType }) => {
+const MyDropdown = ({ title, setSortType }) => {
+  console.log("title " + title);
+  const dropdownTitle = title;
   const onDropdownSelected = (event) => {
     setSortType(event);
   };
@@ -35,17 +37,17 @@ const MyDropdown = ({ setSortType }) => {
     <React.Fragment>
       <DropdownButton
         id="dropdown-basic-button"
-        title="Sort by: Price"
+        title={dropdownTitle}
         onSelect={onDropdownSelected}
       >
-        <Dropdown.Item href="#/action-1" eventKey="option-1">
-          Action
+        <Dropdown.Item href="#/action-1" eventKey="Price">
+          Price
         </Dropdown.Item>
-        <Dropdown.Item href="#/action-2" eventKey="option-2">
-          Another action
+        <Dropdown.Item href="#/action-2" eventKey="Capacity">
+          Capacity
         </Dropdown.Item>
-        <Dropdown.Item href="#/action-3" eventKey="option-3">
-          Something else
+        <Dropdown.Item href="#/action-3" eventKey="Room Number">
+          Room Number
         </Dropdown.Item>
       </DropdownButton>
     </React.Fragment>
@@ -72,76 +74,16 @@ const Switch = ({ setFree }) => {
 
 const Rooms = () => {
   const BASE_URL = "http://127.0.0.1:8000/api/room/";
-  // const { data, loading, error } = useFetch(BASE_URL);
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
   const [search, setSearch] = useState("");
-  const [sortType, setSortType] = useState("");
+  const [sortType, setSortType] = useState("Room Number");
   const [isFree, setFree] = useState(false);
 
-  const fakeData = [
-    {
-      room_type: 1,
-      room_name: "Rachaphruk",
-      room_num: 101,
-      price: 7000,
-      detail: "",
-      pic: "https://cdn.discordapp.com/attachments/909012998285307924/909013743709601832/pexels-hakim-santoso-5556177.jpg",
-      isFree: true,
-      exp_date: null,
-      minPerson: 5,
-      maxPerson: 9,
-    },
-    {
-      room_type: 1,
-      room_name: "Mahanakorn",
-      room_num: 102,
-      price: 7500,
-      detail: "",
-      pic: "https://cdn.discordapp.com/attachments/909012998285307924/909013757680820254/pexels-jonathan-borba-3144580.jpg",
-      isFree: true,
-      exp_date: null,
-      minPerson: 5,
-      maxPerson: 10,
-    },
-    {
-      room_type: 1,
-      room_name: "Narai",
-      room_num: 103,
-      price: 8000,
-      detail: "",
-      pic: "https://cdn.discordapp.com/attachments/909012998285307924/909014154529095751/41531.jpg",
-      isFree: false,
-      exp_date: null,
-      minPerson: 7,
-      maxPerson: 8,
-    },
-    {
-      room_type: 1,
-      room_name: "Baiyok",
-      room_num: 104,
-      price: 4500,
-      detail: "",
-      pic: "https://cdn.discordapp.com/attachments/909012998285307924/909013948743950376/pexels-max-vakhtbovych-7534554.jpg",
-      isFree: true,
-      exp_date: null,
-      minPerson: 5,
-      maxPerson: 6,
-    },
-    {
-      room_type: 1,
-      room_name: "Siam Century",
-      room_num: 105,
-      price: 10000,
-      detail: "samples detail",
-      pic: "https://cdn.discordapp.com/attachments/909012998285307924/909013761371803669/pexels-jonathan-borba-3316922.jpg",
-      isFree: false,
-      exp_date: null,
-      minPerson: 9,
-      maxPerson: 10,
-    },
-  ];
+  const fakeData = fakedata;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -178,7 +120,7 @@ const Rooms = () => {
   }, [sortType]);
 
   return (
-    <React.Fragment>
+    <div className="rooms__background">
       {loading && <Spinner animation="border" variant="dark" />}
       <div className="rooms__title">Room Supalai A</div>
       <div className="rooms__filters">
@@ -187,7 +129,7 @@ const Rooms = () => {
             <SearchBar setSearch={setSearch} />
           </Col>
           <Col sm="3">
-            <MyDropdown setSortType={setSortType} />
+            <MyDropdown title={sortType} setSortType={setSortType} />
           </Col>
           <Col>
             <Switch setFree={setFree} />
@@ -195,11 +137,20 @@ const Rooms = () => {
         </Row>
       </div>
       <div className="rooms__container">
-        {fakeData.map((i) => (
-          <Card key={i.pic} link={i.pic} />
+        {fakeData.map((room) => (
+          <Card
+            key={room.room_num}
+            roomName={room.room_name}
+            roomType={room.room_type}
+            roomNumber={room.room_num}
+            price={room.price}
+            link={room.pic2}
+            minPerson={room.minPerson}
+            maxPerson={room.maxPerson}
+          />
         ))}
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

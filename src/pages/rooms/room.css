@@ -10,17 +10,6 @@
   margin: 0 100px;
 }
 
-.rooms__input {
-  /* border: 0; */
-  width: 100%;
-  padding: 1rem 2rem 0.7rem;
-  padding-left: 4.3rem;
-  border-radius: 20px;
-  font-size: 1.6rem;
-  border-width: 0;
-  background-color: rgb(233, 233, 233);
-}
-
 .rooms__container {
   /* margin: 0 5rem; */
   display: flex;
@@ -30,40 +19,87 @@
 }
 
 /* Dropdown */
-.dropdown-toggle {
-  height: 100%;
-}
-
-.dropdown-toggle.btn-primary {
-  background-color: rgb(133, 133, 133);
-  color: black;
-}
-
-.dropdown-toggle.btn-primary:hover {
-  background-color: aqua;
-}
 
 .dropdown {
   height: 100%;
 }
 
 .dropdown-toggle {
-  width: 12rem;
-  height: 100% !important;
+  /* width: 12rem; */
+  padding: 0 2rem !important;
+  height: 98% !important;
+  border: 2px solid #edebeb !important;
   border-radius: 20px !important;
-  border: 2px solid rgb(68, 68, 68) !important;
+  font-size: 1.7rem !important;
+}
+
+.dropdown-toggle.btn-primary {
+  background-color: #edebeb;
+  color: #585858;
+}
+
+.dropdown-toggle.btn-primary:hover {
+  background-color: rgb(88, 88, 88);
+}
+
+.dropdown-toggle.btn-primary:focus {
+  color: #000;
+  background-color: #edebeb;
+}
+
+.btn-check:active + .btn-primary,
+.btn-check:checked + .btn-primary,
+.btn-primary.active,
+.btn-primary:active,
+.show > .btn-primary.dropdown-toggle {
+  background-color: rgb(88, 88, 88) !important;
+  /* background-color: rgb(228, 6, 6) !important; */
+}
+
+.dropdown-menu {
+  border-radius: 10px !important;
+  /* background-color: aquamarine ; */
+}
+
+.dropdown-item {
+  color: black;
+  font-size: 1.6rem;
+}
+
+.dropdown-item:focus {
+  background-color: rgb(88, 88, 88) !important;
+  outline: none !important;
+}
+
+/* Search bar */
+
+.rooms__input {
+  /* border: 0; */
+  width: 100%;
+  padding: 1rem 2rem 1rem 5rem;
+  border-radius: 20px;
+  font-size: 1.6rem;
+  border-width: 0;
+  background-color: #edebeb;
+  color: #818181;
+}
+
+.rooms__input:focus {
+  outline: none;
 }
 
 .search__icon {
   position: absolute;
-  font-size: 2rem;
-  margin-top: 10px;
-  margin-left: 15px;
-  color: rgb(133, 133, 133);
+  font-size: 1.8rem;
+  margin-top: 12px;
+  margin-left: 20px;
+  color: #a8a3a3;
 }
 
 /* Switch */
+
 .rooms__switch {
+  cursor: pointer !important;
   display: flex;
   justify-content: flex-end;
 }
@@ -74,6 +110,11 @@
 }
 
 .form-check-input {
+  cursor: pointer;
   width: 5rem !important;
   height: 2.5rem !important;
+}
+
+.form-check-input:checked {
+  background-color: #00d3da !important;
 }

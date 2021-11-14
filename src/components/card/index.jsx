@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import room from "../../assets/img/room.png";
 import { FaUserAlt } from "react-icons/fa";
 import { FaMoneyBillAlt } from "react-icons/fa";
@@ -22,7 +23,7 @@ const CardNumber = ({ roomNumber }) => (
   <div className="card__number">{roomNumber}</div>
 );
 
-const CardContent = ({ price, roomName, minPerson, maxPerson }) => (
+const CardContent = ({ price, roomNumber, roomName, minPerson, maxPerson }) => (
   <div className="card__content card__radius">
     <div className="card__name">{roomName}</div>
     <div className="card__detail">
@@ -35,14 +36,14 @@ const CardContent = ({ price, roomName, minPerson, maxPerson }) => (
       <FaMoneyBillAlt size={26} style={{ color: "#bbb" }} />
       <div className="card__detail__text">{price}</div>
     </div>
-    <CardButton />
+    <CardButton roomNumber={roomNumber} />
   </div>
 );
 
-const CardButton = () => (
-  <a className="card__button" href="./">
-    Book
-  </a>
+const CardButton = ({ roomNumber }) => (
+  <Link to={`/rooms/${roomNumber}`}>
+    <div className="card__button">Book</div>
+  </Link>
 );
 
 const Card = ({
@@ -59,6 +60,7 @@ const Card = ({
       <CardHeader link={link} roomType={roomType} roomNumber={roomNumber} />
       <CardContent
         roomName={roomName}
+        roomNumber={roomNumber}
         price={price}
         minPerson={minPerson}
         maxPerson={maxPerson}

@@ -7,8 +7,8 @@ import "./card.css";
 
 const CardHeader = ({ link, roomType, roomNumber }) => {
   let roomTag = "";
-  if (roomType == 1 || roomType == 3) roomTag += "A";
-  else if (roomType == 2 || roomType == 4) roomTag += "B";
+  if (roomType === 1 || roomType === 3) roomTag += "A";
+  else if (roomType === 2 || roomType === 4) roomTag += "B";
   roomTag += roomNumber;
 
   return (

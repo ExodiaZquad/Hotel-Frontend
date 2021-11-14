@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import fakedata from "../../services/fakeData";
+import Fakedata from "../../services/fakeData";
 import Card from "../../components/card";
 // import useFetch from "../../hooks/useFetch";
 import { Spinner } from "react-bootstrap";
@@ -83,41 +83,41 @@ const Rooms = () => {
   const [sortType, setSortType] = useState("Room Number");
   const [isFree, setFree] = useState(false);
 
-  const fakeData = fakedata;
+  const [fakeData, setFakeData] = useState(Fakedata);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const res = await axios
-        .get(BASE_URL)
-        .then(setLoading(false))
-        .catch((err) => setError(err));
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setLoading(true);
+  //     const res = await axios
+  //       .get(BASE_URL)
+  //       .then(setLoading(false))
+  //       .catch((err) => setError(err));
 
-      console.log(res);
-      setData(res.data);
-      console.log(data);
-    };
-    fetchData();
-  }, []);
+  //     console.log(res);
+  //     // setData(res.data);
+  //     // console.log(data);
+  //   };
+  //   fetchData();
+  // }, []);
 
-  useEffect(() => {
-    const fetchSearch = async () => {
-      setLoading(true);
+  // useEffect(() => {
+  //   const fetchSearch = async () => {
+  //     setLoading(true);
 
-      const headers = {
-        headers: {
-          key: "price",
-        },
-      };
+  //     const headers = {
+  //       headers: {
+  //         key: "price",
+  //       },
+  //     };
 
-      const res = await axios
-        .get("http://127.0.0.1:8000/api/room/sort/", headers)
-        .then(setLoading(false))
-        .catch((err) => setError(err));
-      console.log(res);
-    };
-    fetchSearch();
-  }, [sortType]);
+  //     const res = await axios
+  //       .get("http://127.0.0.1:8000/api/room/sort/", headers)
+  //       .then(setLoading(false))
+  //       .catch((err) => setError(err));
+  //     console.log(res);
+  //   };
+  //   fetchSearch();
+  // }, [sortType]);
 
   return (
     <div className="rooms__background">
@@ -136,6 +136,7 @@ const Rooms = () => {
           </Col>
         </Row>
       </div>
+
       <div className="rooms__container">
         {fakeData.map((room) => (
           <Card

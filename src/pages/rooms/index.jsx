@@ -145,7 +145,7 @@ const Rooms = () => {
             roomType={room.room_type}
             roomNumber={room.room_num}
             price={room.price}
-            link={room.pic2}
+            link={room.pic1}
             minPerson={room.minPerson}
             maxPerson={room.maxPerson}
           />

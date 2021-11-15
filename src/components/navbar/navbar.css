@@ -1,0 +1,49 @@
+/* .nav_line{
+    margin: 35px;
+    margin-top: 70px;
+    background: rgba(182, 53, 165, 0.664);
+    height: 10rem;
+    
+} */
+.nav_Exodia{
+    color: white;
+    font-size: 2rem;
+    margin-right: 4rem;
+}
+
+.nav_login{
+    color: white;
+    font-size: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 0.2rem solid rgb(255, 255, 255);
+    border-radius: 1rem;
+    margin: 4rem;
+}
+.nav_items{
+    color: white;
+    font-size: 2rem;
+    margin: 4rem;
+}
+
+.nav_menu{
+    margin-top: 5rem;
+    background: cadetblue;
+    height: 10rem;
+    display: flex;
+    list-style:none;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_circle{
+    background-color: rgb(29, 216, 207);
+    padding: 5rem;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 255, 255);
+    background-image: url("https://cdn.discordapp.com/attachments/878306826591043655/909459080807059496/ExodiatheForbiddenOne-TF04-JP-VG.jpg");
+    background-position: center;
+    background-size: contain;
+}

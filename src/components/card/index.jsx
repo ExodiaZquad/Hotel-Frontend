@@ -36,12 +36,12 @@ const CardContent = ({ price, roomNumber, roomName, minPerson, maxPerson }) => (
       <FaMoneyBillAlt size={26} style={{ color: "#bbb" }} />
       <div className="card__detail__text">{price}</div>
     </div>
-    <CardButton roomNumber={roomNumber} />
+    <CardButton roomNumber={roomNumber} roomName={roomName} />
   </div>
 );
 
-const CardButton = ({ roomNumber }) => (
-  <Link to={`/rooms/${roomNumber}`}>
+const CardButton = ({ roomNumber, roomName }) => (
+  <Link to={`/rooms/${roomName}`}>
     <div className="card__button">Book</div>
   </Link>
 );

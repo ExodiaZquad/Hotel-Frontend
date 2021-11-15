@@ -55,7 +55,6 @@ export const fakeData = [
     minPerson: 5,
     maxPerson: 6,
   },
-
   {
     room_type: 1,
     room_name: "Mahanakorn",
@@ -112,7 +111,6 @@ export const fakeData = [
     minPerson: 6,
     maxPerson: 7,
   },
-
   {
     room_type: 1,
     room_name: "Narai",
@@ -169,7 +167,6 @@ export const fakeData = [
     minPerson: 7,
     maxPerson: 8,
   },
-
   {
     room_type: 1,
     room_name: "Baiyok",
@@ -226,16 +223,15 @@ export const fakeData = [
     minPerson: 7,
     maxPerson: 9,
   },
-
   {
     room_type: 1,
     room_name: "Siam Century",
     room_num: 105,
     price: 10000,
     detail: "",
-    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909014739311546378/pexels-photo-2506990.jpeg",
-    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909014741534515210/pexels-photo-2507014.jpeg",
-    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909014744990634014/pexels-photo-8146160.jpeg",
+    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909451543206563861/pexels-max-vakhtbovych-7061671.jpg",
+    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909451544741707796/pexels-max-vakhtbovych-7147289.jpg",
+    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909451546763354173/pexels-max-vakhtbovych-6284236.jpg",
     isFree: true,
     exp_date: null,
     minPerson: 9,
@@ -247,9 +243,9 @@ export const fakeData = [
     room_num: 205,
     price: 10000,
     detail: "",
-    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909014739311546378/pexels-photo-2506990.jpeg",
-    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909014741534515210/pexels-photo-2507014.jpeg",
-    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909014744990634014/pexels-photo-8146160.jpeg",
+    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909451543206563861/pexels-max-vakhtbovych-7061671.jpg",
+    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909451544741707796/pexels-max-vakhtbovych-7147289.jpg",
+    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909451546763354173/pexels-max-vakhtbovych-6284236.jpg",
     isFree: true,
     exp_date: null,
     minPerson: 9,
@@ -261,9 +257,9 @@ export const fakeData = [
     room_num: 305,
     price: 10000,
     detail: "",
-    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909014739311546378/pexels-photo-2506990.jpeg",
-    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909014741534515210/pexels-photo-2507014.jpeg",
-    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909014744990634014/pexels-photo-8146160.jpeg",
+    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909451543206563861/pexels-max-vakhtbovych-7061671.jpg",
+    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909451544741707796/pexels-max-vakhtbovych-7147289.jpg",
+    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909451546763354173/pexels-max-vakhtbovych-6284236.jpg",
     isFree: true,
     exp_date: null,
     minPerson: 9,
@@ -275,15 +271,14 @@ export const fakeData = [
     room_num: 405,
     price: 10000,
     detail: "",
-    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909014739311546378/pexels-photo-2506990.jpeg",
-    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909014741534515210/pexels-photo-2507014.jpeg",
-    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909014744990634014/pexels-photo-8146160.jpeg",
+    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909451543206563861/pexels-max-vakhtbovych-7061671.jpg",
+    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909451544741707796/pexels-max-vakhtbovych-7147289.jpg",
+    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909451546763354173/pexels-max-vakhtbovych-6284236.jpg",
     isFree: true,
     exp_date: null,
     minPerson: 9,
     maxPerson: 10,
   },
-
   {
     room_type: 2,
     room_name: "Pikul",
@@ -340,7 +335,6 @@ export const fakeData = [
     minPerson: 1,
     maxPerson: 2,
   },
-
   {
     room_type: 2,
     room_name: "Mali",
@@ -397,7 +391,6 @@ export const fakeData = [
     minPerson: 2,
     maxPerson: 3,
   },
-
   {
     room_type: 2,
     room_name: "Relavadee",
@@ -454,7 +447,6 @@ export const fakeData = [
     minPerson: 2,
     maxPerson: 4,
   },
-
   {
     room_type: 2,
     room_name: "Tantawan",
@@ -511,7 +503,6 @@ export const fakeData = [
     minPerson: 3,
     maxPerson: 4,
   },
-
   {
     room_type: 2,
     room_name: "Mintra",
@@ -568,7 +559,6 @@ export const fakeData = [
     minPerson: 3,
     maxPerson: 4,
   },
-
   {
     room_type: 3,
     room_name: "Ruby Utopia",
@@ -625,7 +615,6 @@ export const fakeData = [
     minPerson: 15,
     maxPerson: 16,
   },
-
   {
     room_type: 3,
     room_name: "Lapiz Lazuli",
@@ -640,7 +629,6 @@ export const fakeData = [
     minPerson: 16,
     maxPerson: 18,
   },
-
   {
     room_type: 3,
     room_name: "Lapiz Lazuli",
@@ -711,7 +699,6 @@ export const fakeData = [
     minPerson: 17,
     maxPerson: 20,
   },
-
   {
     room_type: 4,
     room_name: "Pawn Village",
@@ -774,24 +761,23 @@ export const fakeData = [
     room_num: 5,
     price: 15000,
     detail: "",
-    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909018303173898240/the-villa-features-two-large-terraces-which-overlook-the-swimming-pool-and-provide-panoramic-city-views.jpg",
-    pic2: "https://media.discordapp.net/attachments/909012998285307924/909018300162408518/the-penthouse-level-master-suite-opens-to-a-balcony-with-sweeping-city-views.jpg",
-    pic3: "https://media.discordapp.net/attachments/909012998285307924/909018301529735249/the-open-plan-living-space-is-bright-white-and-airy.jpg",
+    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909452924965502976/pexels-photo-323780.jpeg",
+    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909452928157356043/pexels-photo-2724749.jpeg",
+    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909452932062273557/pexels-photo-5563466.jpeg",
     isFree: true,
     exp_date: null,
     minPerson: 10,
     maxPerson: 12,
   },
-
   {
     room_type: 4,
     room_name: "Jack Cave",
     room_num: 6,
     price: 15000,
     detail: "",
-    pic1: "https://media.discordapp.net/attachments/909012998285307924/909018303173898240/the-villa-features-two-large-terraces-which-overlook-the-swimming-pool-and-provide-panoramic-city-views.jpg",
-    pic2: "https://media.discordapp.net/attachments/909012998285307924/909018300162408518/the-penthouse-level-master-suite-opens-to-a-balcony-with-sweeping-city-views.jpg",
-    pic3: "https://media.discordapp.net/attachments/909012998285307924/909018301529735249/the-open-plan-living-space-is-bright-white-and-airy.jpg",
+    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909452924965502976/pexels-photo-323780.jpeg",
+    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909452928157356043/pexels-photo-2724749.jpeg",
+    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909452932062273557/pexels-photo-5563466.jpeg",
     isFree: true,
     exp_date: null,
     minPerson: 10,
@@ -831,9 +817,9 @@ export const fakeData = [
     room_num: 9,
     price: 19000,
     detail: "",
-    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909019856165273610/64_Two-bedroom-Beachfront-Pool-Villa_W.jpg",
-    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909019852319113236/69_Two_bedroom-Beachfront-Pool-Villa_W.jpg",
-    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909019911769174046/68_Two_bedroom-Beachfront-Pool-Villa_W.jpg",
+    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909454770488606760/pexels-photo-261410.jpeg",
+    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909454771159703612/pexels-photo-2079234.jpeg",
+    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909454775433719868/pexels-pixabay-259962.jpg",
     isFree: true,
     exp_date: null,
     minPerson: 13,
@@ -845,14 +831,18 @@ export const fakeData = [
     room_num: 10,
     price: 19000,
     detail: "",
-    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909019856165273610/64_Two-bedroom-Beachfront-Pool-Villa_W.jpg",
-    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909019852319113236/69_Two_bedroom-Beachfront-Pool-Villa_W.jpg",
-    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909019911769174046/68_Two_bedroom-Beachfront-Pool-Villa_W.jpg",
+    pic1: "https://cdn.discordapp.com/attachments/909012998285307924/909454770488606760/pexels-photo-261410.jpeg",
+    pic2: "https://cdn.discordapp.com/attachments/909012998285307924/909454771159703612/pexels-photo-2079234.jpeg",
+    pic3: "https://cdn.discordapp.com/attachments/909012998285307924/909454775433719868/pexels-pixabay-259962.jpg",
     isFree: true,
     exp_date: null,
     minPerson: 13,
     maxPerson: 15,
   },
 ];
+
+export const getRoom = (name) => {
+  return fakeData.filter((room) => room.room_name === name);
+};
 
 export default fakeData;

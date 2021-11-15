@@ -1,45 +1,70 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import room from "../../assets/img/room.png";
 import { FaUserAlt } from "react-icons/fa";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import "./card.css";
 
-const CardHeader = () => (
-  <div className="card__header ">
-    <CardNumber />
-    <img src={room} alt="" className="card__img card__radius" />
-  </div>
+const CardHeader = ({ link, roomType, roomNumber }) => {
+  let roomTag = "";
+  if (roomType === 1 || roomType === 3) roomTag += "A";
+  else if (roomType === 2 || roomType === 4) roomTag += "B";
+  roomTag += roomNumber;
+
+  return (
+    <div className="card__header ">
+      <CardNumber roomNumber={roomTag} />
+      <img src={link} alt="" className="card__img card__radius" />
+    </div>
+  );
+};
+
+const CardNumber = ({ roomNumber }) => (
+  <div className="card__number">{roomNumber}</div>
 );
 
-const CardNumber = () => <div className="card__number">A 101</div>;
-
-const CardContent = () => (
+const CardContent = ({ price, roomNumber, roomName, minPerson, maxPerson }) => (
   <div className="card__content card__radius">
-    <div className="card__name">Room Supalai A</div>
+    <div className="card__name">{roomName}</div>
     <div className="card__detail">
       <FaUserAlt size={22} style={{ color: "#bbb" }} />
-      <div className="card__detail__text">5 - 6</div>
+      <div className="card__detail__text">
+        {minPerson} - {maxPerson}
+      </div>
     </div>
     <div className="card__detail">
       <FaMoneyBillAlt size={26} style={{ color: "#bbb" }} />
-      <div className="card__detail__text">1000 ~ 3000</div>
+      <div className="card__detail__text">{price}</div>
     </div>
-    <CardButton />
+    <CardButton roomNumber={roomNumber} roomName={roomName} />
   </div>
 );
 
-const CardButton = () => (
-  <a className="card__button" href="./">
-    Book
-    {/* <a class="card__button__text">Book</a> */}
-  </a>
+const CardButton = ({ roomNumber, roomName }) => (
+  <Link to={`/rooms/${roomName}`}>
+    <div className="card__button">Book</div>
+  </Link>
 );
 
-const Card = () => {
+const Card = ({
+  roomName,
+  roomType,
+  roomNumber,
+  price,
+  link,
+  minPerson,
+  maxPerson,
+}) => {
   return (
     <div className="card__blocks card__radius">
-      <CardHeader />
-      <CardContent />
+      <CardHeader link={link} roomType={roomType} roomNumber={roomNumber} />
+      <CardContent
+        roomName={roomName}
+        roomNumber={roomNumber}
+        price={price}
+        minPerson={minPerson}
+        maxPerson={maxPerson}
+      />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Home from "../pages/home";
 import Login from "../pages/login";
 import Profile from "../pages/profile";
 import Rooms from "../pages/rooms";
+import Room from "../pages/room";
 import TypeRooms from "../pages/typeRooms";
 
 const Routes = () => {
@@ -18,6 +19,9 @@ const Routes = () => {
         </Route>
         <Route path="/typeRooms">
           <TypeRooms />
+        </Route>
+        <Route path="/rooms/:id">
+          <Room />
         </Route>
         <Route path="/rooms">
           <Rooms />

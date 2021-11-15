@@ -1,0 +1,206 @@
+.signin{
+  display: flex;
+}
+.signin__right{
+  height:100vh;
+  width:100%;
+  background-color: rosybrown;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.signin__header{
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 15px 0;
+}
+.signin__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: green;
+  height:50vh;
+  width:50%;
+  align-items:center;
+}
+.signin__form{
+  width:100%;
+  background-color: seashell;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  font-size: 1.2rem;
+  
+}
+.user__icon{
+  font-size: 2rem;
+  color: #aaa;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  position: absolute;
+}
+.pass__icon{
+  font-size: 2rem;
+  color: #aaa;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  position: absolute;
+}
+.input__user { 
+  border: None;
+  background-color: #f0f0f0;
+  width: 400px;
+  margin: 10px 0;
+  height: 50px;
+  border-radius: 55px;
+  display: grid;
+  position: relative;
+}
+.input__pass { 
+  border: None;
+  background-color: #f0f0f0;
+  width: 400px;
+  height: 50px;
+  border-radius: 55px;
+  display: grid;
+  position: relative;
+}
+.input__user input{ 
+  border: None;
+  background-color: #f0f0f0;
+  border-radius: 55px;
+  padding-left: 4rem;
+}
+.input__pass input{ 
+  border: None;
+  background-color: #f0f0f0;
+  border-radius: 55px;
+  padding-left: 4rem;
+}
+.btn__signin{
+  width: 100px;
+  background-color:#00D3DA;
+  border: none;
+  outline: none;
+  height: 40px;
+  border-radius: 49px;
+  color:white;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn__signup{
+  width: 100px;
+  background-color:black;
+  border: none;
+  outline: none;
+  height: 4rem;
+  border-radius: 4.9rem;
+  color:white;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.input__user input::placeholder {
+  color: #aaa;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.input__pass input::placeholder {
+  color: #aaa;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+/* SigninLeft */
+.signin__left{
+  height:100vh;
+  width:100%;
+}
+.img__shape{
+  height:100vh;
+  width:100%;
+  background-image: url("https://cdn.discordapp.com/attachments/904607198263509024/904754907838554132/pexels-thanhhoa-tran-1506836.jpg");
+  background-size: cover;
+  clip-path: circle(75.1% at 25% 50%);
+  position: relative;
+  /* right: 50%; */
+}
+.signup{
+  display: flex;
+}
+.signup__right{
+  height:100vh;
+  width:100%;
+  background-color: rosybrown;
+}
+.signup__left{
+  height:100vh;
+  width:100%;
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.signup__container{
+  height:60vh;
+  width:60%;
+  background-color:white;
+  display: flex;
+  justify-content: center;
+  align-items:center; 
+  flex-direction: column;
+}
+.signup__header{
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 15px 0;
+}
+.signup__input{
+  height:100vh;
+  width:100%;
+  background-color: violet;
+  display: flex;
+  
+  align-items:center;
+  flex-direction: column;
+}
+.signup__first{
+  border: None;
+  background-color: #f0f0f0;
+  border-radius: 5.5rem;
+  width: 200px;
+  height: 50px;
+  padding-left: 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #aaa;
+} 
+.signup__last{
+  border: None;
+  background-color: #f0f0f0;
+  border-radius: 55px;
+  width: 200px;
+  height: 50px;
+  margin-left: 2rem;
+  padding-left: 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #aaa;
+} 
+.signup__another{
+  border: None;
+  background-color: #f0f0f0;
+  border-radius: 55px;
+  width: 420px;
+  height: 50px;
+  margin-top: 2rem;
+  padding-left: 2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #aaa;
+}

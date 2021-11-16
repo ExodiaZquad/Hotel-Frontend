@@ -845,4 +845,13 @@ export const getRoom = (name) => {
   return fakeData.filter((room) => room.room_name === name);
 };
 
+export const getRandomRoom = () => {
+  let ans = [];
+  for (let i = 0; i < 3; i++) {
+    ans.push(fakeData[Math.floor(Math.random() * fakeData.length)]);
+  }
+
+  return ans;
+};
+
 export default fakeData;

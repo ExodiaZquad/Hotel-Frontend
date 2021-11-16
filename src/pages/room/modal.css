@@ -1,0 +1,12 @@
+.modal-title {
+  font-size: 2rem !important;
+}
+
+.modal-body {
+  font-size: 2rem;
+}
+
+.modal-footer .btn {
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem !important;
+}

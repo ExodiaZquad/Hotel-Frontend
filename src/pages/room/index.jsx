@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../../components/card";
+import { Link } from "react-router-dom";
 import { getRoom, getRandomRoom } from "../../services/fakeData";
 import { useParams } from "react-router";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Modal, Button } from "react-bootstrap";
 import {
   FaWifi,
   FaCoffee,
@@ -12,7 +13,7 @@ import {
 } from "react-icons/fa";
 
 import "./room.css";
-import { Link } from "react-router-dom";
+import "./modal.css";
 
 const MyCarousal = ({ room }) => {
   return (
@@ -49,6 +50,10 @@ const MyCarousal = ({ room }) => {
 const Feature = ({ room }) => {
   return (
     <div className="feature__container">
+      <div className="feature__block">
+        <h1 className="feature__name">{room.room_name}</h1>
+      </div>
+
       <div className="feature__block">
         <div className="feature__title">Features</div>
         <div className="feature__content">
@@ -93,19 +98,66 @@ const Feature = ({ room }) => {
           <span className="feature__service__text">Swimming pool</span>
         </div>
       </div>
+
+      <BookButton />
     </div>
   );
 };
 
 const BookButton = () => {
-  return <div className="book__button">Booking</div>;
+  const [modalShow, setModalShow] = React.useState(false);
+
+  return (
+    <React.Fragment>
+      <div className="book__button" onClick={() => setModalShow(true)}>
+        Booking
+      </div>
+
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </React.Fragment>
+  );
 };
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        {/* <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p> */}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
 
 const Room = () => {
   const { id } = useParams();
   const room = getRoom(id);
-  const random = getRandomRoom();
-  console.log(random);
+
+  const [random, setRandom] = useState([]);
+
+  useEffect(() => {
+    setRandom(getRandomRoom(id));
+  }, [id]);
 
   return (
     <div className="room__overpage">
@@ -122,13 +174,12 @@ const Room = () => {
           </div>
           <div className="room__detail">
             <Feature room={room[0]} />
-            <BookButton />
           </div>
         </div>
         <div className="room__recommend">
           {random.map((room) => (
             <Card
-              key={room.room_num}
+              key={room.pic1}
               roomName={room.room_name}
               roomType={room.room_type}
               roomNumber={room.room_num}

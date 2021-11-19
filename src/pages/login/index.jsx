@@ -152,7 +152,7 @@ const SignIn = () => {
               Sign up
             </button>
             <button className="btn__signin" onClick={signup__click__signin}>
-              Login
+              Sign in
             </button>
           </div>
         </div>

@@ -6,8 +6,13 @@ const TypeRoom = ({ img, text, link }) => (
   <div className="booking-type">
     <Link to={link}>
       <img src={img} alt="" />
-      <div className="info">
-        <h2>{text}</h2>
+          <div className="info">
+            <h2>{text}</h2>
+          </div>
+      <div className = 'booking-hover'>
+          <div className="info">
+            <h2>{text}</h2>
+          </div>
       </div>
     </Link>
   </div>

@@ -7,6 +7,7 @@ import { DropdownButton, Dropdown, Row, Col, Form } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import "./room.css";
+import { useParams } from "react-router";
 
 const SearchBar = ({ setSearch }) => {
   const onSearch = (message) => {
@@ -72,6 +73,8 @@ const Switch = ({ setFree }) => {
 };
 
 const TypeRooms = () => {
+  const { id: roomType } = useParams();
+  console.log(roomType);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 

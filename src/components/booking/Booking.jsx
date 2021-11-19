@@ -6,13 +6,13 @@ const TypeRoom = ({ img, text, link }) => (
   <div className="booking-type">
     <Link to={link}>
       <img src={img} alt="" />
-          <div className="info">
-            <h2>{text}</h2>
-          </div>
-      <div className = 'booking-hover'>
-          <div className="info">
-            <h2>{text}</h2>
-          </div>
+      <div className="info">
+        <h2>{text}</h2>
+      </div>
+      <div className="booking-hover">
+        <div className="info">
+          <h2>{text}</h2>
+        </div>
       </div>
     </Link>
   </div>
@@ -25,22 +25,22 @@ const Booking = () => {
         <h2>Booking</h2>
       </div>
       <TypeRoom
-        link="/typeRooms/rooma"
+        link="/typeRooms/1"
         img="https://media.discordapp.net/attachments/910957790992941129/910961565283520512/luxury-living-room-ideas.jpg?width=960&height=480"
         text="Room A"
       />
       <TypeRoom
-        link="/typeRooms/roomb"
+        link="/typeRooms/2"
         img="https://media.discordapp.net/attachments/910957790992941129/910961561672224848/luxury-apartment-living-room-ideas.jpg?width=960&height=550"
         text="Room B"
       />
       <TypeRoom
-        link="/typeRooms/housea"
+        link="/typeRooms/3"
         img="https://media.discordapp.net/attachments/910957790992941129/910961565694591036/luxury-house-with-pool-design.jpg?width=960&height=540"
         text="House A"
       />
       <TypeRoom
-        link="/typeRooms/houseb"
+        link="/typeRooms/4"
         img="https://media.discordapp.net/attachments/910957790992941129/910961223242240130/modern-home-on-the-coast.jpg?width=960&height=593"
         text="House B"
       />

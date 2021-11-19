@@ -12,6 +12,9 @@ import {
   FaArrowLeft,
 } from "react-icons/fa";
 
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import { Calendar, utils } from "react-modern-calendar-datepicker";
+
 import "./room.css";
 import "./modal.css";
 
@@ -122,6 +125,19 @@ const BookButton = () => {
 };
 
 function MyVerticallyCenteredModal(props) {
+  const [selectedDayRange, setSelectedDayRange] = useState({
+    from: null,
+    to: null,
+  });
+
+  const onSuccess = () => {
+    console.log(selectedDayRange);
+  };
+
+  useEffect(() => {
+    // console.log(selectedDayRange);
+  }, [selectedDayRange]);
+
   return (
     <Modal
       {...props}
@@ -130,20 +146,18 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
-        </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Pick Date</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {/* <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p> */}
+        <Calendar
+          value={selectedDayRange}
+          onChange={setSelectedDayRange}
+          minimumDate={utils().getToday()}
+          shouldHighlightWeekends
+        />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={() => onSuccess()}>Close</Button>
       </Modal.Footer>
     </Modal>
   );

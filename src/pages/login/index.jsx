@@ -1,12 +1,38 @@
 import React, { useState } from "react";
-import "./login.css";
+import auth from "../../services/authService";
+import { Redirect } from "react-router";
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-import { siblings } from "dom-helpers";
+import "./login.css";
 
 const SignIn = () => {
+  const [account, setAccount] = useState({ username: "", password: "" });
+
+  const handleChange = ({ currentTarget: input }) => {
+    const temp = { ...account };
+    temp[input.name] = input.value;
+
+    setAccount(temp);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    doSubmit();
+  };
+
+  const doSubmit = async () => {
+    try {
+      console.log(account.username, account.password);
+      await auth.login(account.username, account.password);
+
+      window.location = "/";
+    } catch (ex) {
+      console.log(ex);
+    }
+  };
+
   const signup__click__signin = () => {
     const box = document.getElementById("contain");
     box.classList.toggle("change__page__to__signup");
@@ -56,7 +82,7 @@ const SignIn = () => {
               </i>
               <input type="text" placeholder="Password" />
             </div>
-            <button class="btn__signup" onClick={signup__click__signin}>
+            <button className="btn__signup" onClick={signup__click__signin}>
               Sign up
             </button>
           </div>
@@ -73,16 +99,30 @@ const SignIn = () => {
               <i>
                 <FaUserAlt />
               </i>
-              <input type="text" placeholder="Username" />
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                onChange={handleChange}
+                value={account.username}
+              />
             </div>
             <div className="signin__pass">
               <i>
                 <FaLock />
               </i>
-              <input type="text" placeholder="Password" />
+              <input
+                type="text"
+                placeholder="Password"
+                name="password"
+                onChange={handleChange}
+                value={account.password}
+              />
             </div>
-            <button class="btn__signin">Sign in</button>
-            <button class="btn__signup" onClick={signup__click__signin}>
+            <button className="btn__signin" onClick={handleSubmit}>
+              Sign in
+            </button>
+            <button className="btn__signup" onClick={signup__click__signin}>
               Sign up
             </button>
           </div>
@@ -93,6 +133,8 @@ const SignIn = () => {
 };
 
 const Login = () => {
+  if (auth.isAuthen()) return <Redirect to="/" />;
+
   return <SignIn />;
 };
 

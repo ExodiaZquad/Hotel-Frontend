@@ -8,7 +8,6 @@
 .booking-type {
   position: relative;
   text-align: center;
-  color: white;
   margin: 50px;
 }
 
@@ -27,19 +26,20 @@
 }
 
 .booking-type .info h2{
+  color: white;
   font-size: 80px;
 }
 
 @media (max-width: 1400px){
   .booking-type{
     position: relative;
-    -align: center;
+    text-align: center;
     color: white;
-    margin: 60px;
+    margin: 40px;
   }
 
   .booking-type img{
-    width: 700px;
+    width: 650px;
     height:300px;
     border-radius: 50px;
   }
@@ -59,9 +59,9 @@
 @media (max-width: 1200px){
   .booking-type{
     position: relative;
-    -align: center;
+    text-align: center;
     color: white;
-    margin: 60px;
+    margin: 40px;
   }
 
   .booking-type img{
@@ -85,9 +85,9 @@
 @media (max-width: 850px){
   .booking-type{
     position: relative;
-    -align: center;
+    text-align: center;
     color: white;
-    margin: 50px;
+    margin: 30px;
   }
 
   .booking-type img{

@@ -1,49 +1,100 @@
-/* .nav_line{
-    margin: 35px;
-    margin-top: 70px;
-    background: rgba(182, 53, 165, 0.664);
+.nav_all{
+
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 20vh;
+    position: fixed;
+}
+
+.nav_menu{
+    /* background-color: rgba(28, 98, 204, 0.521); */
     height: 10rem;
-    
-} */
-.nav_Exodia{
+    list-style:none;
+    margin-top: 5vh;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    display: flex;
+    padding: 3rem 10%;
+}
+
+.nav_exodia{
     color: white;
-    font-size: 2rem;
+    font-size: 4rem;
+    font-weight: 500;
     margin-right: 4rem;
+    text-decoration: none;
+    right: 1rem;
+
+}
+.nav_exodia:hover{
+    color: white;
 }
 
 .nav_login{
     color: white;
     font-size: 2rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     border: 0.2rem solid rgb(255, 255, 255);
-    border-radius: 1rem;
+    border-radius: 3rem;
     margin: 4rem;
+    text-decoration: none;
 }
+.nav_login:hover{
+    color: white;
+}
+
+
+/* center menu navbar */
+.nav_select{
+    display: flex;
+    justify-content: center;
+    min-width: 90rem;
+}
+
 .nav_items{
     color: white;
     font-size: 2rem;
-    margin: 4rem;
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 0.05rem;
+    /* background-color: tomato; */
+    padding: 2rem 5rem;
+
 }
 
-.nav_menu{
-    margin-top: 5rem;
-    background: cadetblue;
-    height: 10rem;
-    display: flex;
-    list-style:none;
-    justify-content: center;
-    align-items: center;
+.nav_items:after{
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    height: 0.3rem;
+    width: 100%;
+    left: 0rem;
+    bottom: 0rem;
+
 }
+
+.nav_items:hover{
+    color: white;
+}
+
 
 .nav_circle{
     background-color: rgb(29, 216, 207);
-    padding: 5rem;
+    padding: 4.5rem;
     border-radius: 50%;
-    border: 5px solid rgb(255, 255, 255);
+    border: 0.4rem solid rgb(255, 255, 255);
     background-image: url("https://cdn.discordapp.com/attachments/878306826591043655/909459080807059496/ExodiatheForbiddenOne-TF04-JP-VG.jpg");
     background-position: center;
     background-size: contain;
+    margin: 4rem;
 }
+
+
+
+ 
+
+

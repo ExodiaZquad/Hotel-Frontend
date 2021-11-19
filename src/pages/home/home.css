@@ -1,0 +1,8 @@
+.home_back{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://cdn.discordapp.com/attachments/904607198263509024/904754907838554132/pexels-thanhhoa-tran-1506836.jpg");
+    /* background-color: tomato; */
+    background-size: cover;
+    background-position: center;
+}

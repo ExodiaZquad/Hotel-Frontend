@@ -1,9 +1,9 @@
 export const MenuItems = [
-    {
-        title: 'EXODIA',
-        url: '#',
-        cName: 'nav_Exodia'
-    },
+    // {
+    //     title: 'EXODIA',
+    //     url: '#',
+    //     cName: 'nav_Exodia'
+    // },
     {
         title: 'Home',
         url: '/home',
@@ -29,9 +29,9 @@ export const MenuItems = [
         url: '/typeRooms',
         cName: 'nav_items'
     },
-    {
-        title: 'Login',
-        url: '/login',
-        cName: 'nav_login'
-    }
+    // {
+    //     title: 'Login',
+    //     url: '/login',
+    //     cName: 'nav_login'
+    // }
 ]

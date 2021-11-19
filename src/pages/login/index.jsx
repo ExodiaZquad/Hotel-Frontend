@@ -105,6 +105,7 @@ const SignIn = () => {
                 name="username"
                 onChange={handleChange}
                 value={account.username}
+                autoComplete="off"
               />
             </div>
             <div className="signin__pass">
@@ -117,6 +118,7 @@ const SignIn = () => {
                 name="password"
                 onChange={handleChange}
                 value={account.password}
+                autoComplete="off"
               />
             </div>
             <button className="btn__signin" onClick={handleSubmit}>

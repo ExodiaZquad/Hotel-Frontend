@@ -1,0 +1,132 @@
+.rooms__title {
+  font-size: 6rem;
+  font-weight: 600;
+  color: #00d3da;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.rooms__filters {
+  margin: 0 100px;
+}
+
+.rooms__container {
+  /* margin: 0 5rem; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem 10rem;
+}
+
+/* Dropdown */
+
+.dropdown {
+  height: 100%;
+}
+
+.dropdown-toggle {
+  /* width: 12rem; */
+  padding: 0 2rem !important;
+  height: 98% !important;
+  border: 2px solid #edebeb !important;
+  border-radius: 20px !important;
+  font-size: 1.7rem !important;
+}
+
+.dropdown-toggle.btn-primary {
+  background-color: #edebeb;
+  color: #585858;
+}
+
+.dropdown-toggle.btn-primary:hover {
+  background-color: rgb(88, 88, 88);
+}
+
+.dropdown-toggle.btn-primary:focus {
+  color: #000;
+  background-color: #edebeb;
+}
+
+.btn-check:active + .btn-primary,
+.btn-check:checked + .btn-primary,
+.btn-primary.active,
+.btn-primary:active,
+.show > .btn-primary.dropdown-toggle {
+  background-color: rgb(88, 88, 88) !important;
+  /* background-color: rgb(228, 6, 6) !important; */
+}
+
+.dropdown-menu {
+  border-radius: 10px !important;
+  /* background-color: aquamarine ; */
+}
+
+.dropdown-item {
+  color: black;
+  font-size: 1.6rem;
+}
+
+.dropdown-item:focus {
+  background-color: rgb(88, 88, 88) !important;
+  outline: none !important;
+}
+
+/* Search bar */
+
+.rooms__input {
+  /* border: 0; */
+  width: 100%;
+  padding: 1rem 2rem 1rem 5rem;
+  border-radius: 20px;
+  font-size: 1.6rem;
+  border-width: 0;
+  background-color: #edebeb;
+  color: #818181;
+}
+
+.rooms__input:focus {
+  outline: none;
+}
+
+.search__icon {
+  position: absolute;
+  font-size: 1.8rem;
+  margin-top: 12px;
+  margin-left: 20px;
+  color: #a8a3a3;
+}
+
+/* Switch */
+
+.rooms__switch {
+  cursor: pointer !important;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-check-label {
+  font-size: 2rem;
+  padding-left: 1rem;
+}
+
+.form-check-input {
+  cursor: pointer;
+  width: 5rem !important;
+  height: 2.5rem !important;
+}
+
+.form-check-input:checked {
+  background-color: #00d3da !important;
+}
+
+.spinner__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+}
+
+.spinner-border {
+  width: 5rem !important;
+  height: 5rem !important;
+}

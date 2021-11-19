@@ -1,55 +1,123 @@
+.room__arrow {
+  font-size: 2.4rem;
+  font-weight: 600;
+  position: absolute;
+  top: 17px;
+  left: 2rem;
+  cursor: pointer;
+}
+
+.room__arrow a {
+  color: #000;
+  text-decoration: none;
+}
+
+.room__arrow a:hover {
+  color: #00d3da;
+  text-decoration: none;
+}
+
+.arrow__text {
+  margin-left: 1rem;
+  position: relative;
+  top: 2px;
+}
+
 /* TODO: Layout */
 
 .room__page {
-  padding: 2rem;
+  padding: 7rem 2rem;
   min-height: 100vh;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .room__content {
-  /* height: 60rem; */
+  height: 60rem;
   display: grid;
-  grid-template-columns: 60fr 40fr;
-  gap: 2rem;
+  grid-template-columns: 75fr 25fr;
+  gap: 5rem;
 }
 
 .room__detail {
   height: 100%;
+  box-shadow: 0 0 20px rgb(214, 214, 214);
+  position: relative;
   /* background-color: black; */
-  box-shadow: 0 0 20px rgb(189, 189, 189);
 }
 
-/* TODO: Recommend */
-
-/* .room__recommend {
-  background-color: blue;
-} */
-
 /* TODO: Carousel */
-
-/* .carousel,
+.carousel,
 .carousel-inner,
 .carousel-item,
 .carousel-inner .active {
-  height: 100%;
-  height: 0;
-} */
+  height: 63.4rem !important;
+  /* max-height: 100vh; */
+}
 
 .carousel-item img {
-  /* width: 100%; */
-  /* height: 100%; */
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
 }
 
-/* .carousel-caption {
-  top: 40%;
-} */
-
-/* .carousel-caption span {
-  color: #2583ff;
-} */
-
-/* .backdrop {
-  background: rgba(0, 0, 0, 0.5);
+/* TODO: Feature */
+.feature__container {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 6rem;
+  background-color: #fbfbfb;
   height: 100%;
+  /* background-color: #000; */
+  /* position: relative; */
+}
+
+.feature__block {
+  margin-bottom: 2rem;
+}
+
+.feature__name {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.feature__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.feature__content span {
+  margin-left: 2rem;
+}
+
+.feature__service__text {
+  margin-left: 3rem;
+}
+
+/* TODO: Book Button */
+.book__button {
+  position: absolute;
+  left: calc(50% - 6rem);
+  bottom: 70px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #00d3da;
+  padding: 1rem 3rem;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* TODO: Recommend */
+
+.room__recommend {
+  display: flex;
+  margin-top: 7rem;
+  justify-content: space-around;
+}
+/* .room__recommend {
+  background-color: blue;
 } */

@@ -1,0 +1,114 @@
+.booking-Head h2{
+  font-size: 60px;
+  text-align: center;
+  margin: 60px;
+  color: #00D3DA;
+}
+
+.booking-type {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: 50px;
+}
+
+.booking-type img{
+  width: 900px;
+  height: 400px;
+  border-radius: 50px;
+}
+
+/* Centered text */
+.booking-type .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.booking-type .info h2{
+  font-size: 80px;
+}
+
+@media (max-width: 1400px){
+  .booking-type{
+    position: relative;
+    -align: center;
+    color: white;
+    margin: 60px;
+  }
+
+  .booking-type img{
+    width: 700px;
+    height:300px;
+    border-radius: 50px;
+  }
+
+  .booking-type .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .booking-type .info h2{
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 1200px){
+  .booking-type{
+    position: relative;
+    -align: center;
+    color: white;
+    margin: 60px;
+  }
+
+  .booking-type img{
+    width: 600px;
+    height: 300px;
+    border-radius: 50px;
+  }
+
+  .booking-type .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .booking-type .info h2{
+    font-size: 65px;
+  }
+}
+
+@media (max-width: 850px){
+  .booking-type{
+    position: relative;
+    -align: center;
+    color: white;
+    margin: 50px;
+  }
+
+  .booking-type img{
+    width: 500px;
+    height: 100;
+    border-radius: 50px;
+  }
+
+  .booking-type .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .booking-type .info h2{
+    font-size: 60px;
+  }
+}
+
+
+
+
+      

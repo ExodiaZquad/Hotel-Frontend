@@ -1,184 +1,26 @@
 import React from "react";
-import "./style.css";
+import { Link } from "react-router-dom";
+import "./booking.css";
 
-const Room_A = () => (
-  <div class="img-slider">
-      <div class="slide active">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-      <div class="info">
-        <h2>Room A</h2>
-      </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>Room A</h2>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>Room A</h2>
-          {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
-        </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>Room A</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-      </div>
-      <div class="navigation">
-        <div class="btn active"></div>  
-        <div class="btn"></div>
-        <div class="btn"></div>
-        <div class="btn"></div>
-      </div>
-  </div>   
-);
-const Room_B = () => (
-  <div class="img-slider">
-      <div class="slide active">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-      <div class="info">
-        <h2>Room B</h2>
-      </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>Room B</h2>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>Room B</h2>
-          {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
-        </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>Room B</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-      </div>
-      <div class="navigation">
-        <div class="btn active"></div>
-        <div class="btn"></div>
-        <div class="btn"></div>
-        <div class="btn"></div>
-      </div>
-  </div>   
-);
-const House_A = () => (
-  <div class="img-slider">
-      <div class="slide active">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-      <div class="info">
-        <h2>House A</h2>
-      </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>House A</h2>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>House A</h2>
-          {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
-        </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>House A</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-      </div>
-      <div class="navigation">
-        <div class="btn active"></div>
-        <div class="btn"></div>
-        <div class="btn"></div>
-        <div class="btn"></div>
-      </div>
-  </div>   
-);
-const House_B = () => (
-  <div class="img-slider">
-      <div class="slide active">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-      <div class="info">
-        <h2>House B</h2>
-      </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>House B</h2>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>House B</h2>
-          {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> */}
-        </div>
-      </div>
-      <div class="slide">
-        <img src="https://media.discordapp.net/attachments/909012998285307924/909019721582657546/AirForce_HuaHin_10.jpg?width=1014&height=676" alt="" />
-        <div class="info">
-          <h2>House B</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-      </div>
-      <div class="navigation">
-        <div class="btn active"></div>
-        <div class="btn"></div>
-        <div class="btn"></div>
-        <div class="btn"></div>
-      </div>
-  </div>   
-);
-var slides = document.querySelectorAll('.slide');
-var btns = document.querySelectorAll('.btn');
-let currentSlide = 1;
-var manualNav = function(manual){
-  slides.forEach((slide) => {
-    slide.classList.remove('active');
-
-    btns.forEach((btn) => {
-      btn.classList.remove('active');
-    });
-  });
-
-  slides[manual].classList.add('active');
-  btns[manual].classList.add('active');
-}
-
-btns.forEach((btn, i) => {
-  btn.addEventListener("click", () => {
-    manualNav(i);
-    currentSlide = i;
-  });
-});
-
+const TypeRoom = ({img,text,link})=>(
+  <Link to={link}>
+    <div class="booking-type">
+      <img src={img} alt=""/>
+      <div class="info"><h2>{text}</h2></div>
+    </div>
+  </Link>
+)
 const Booking = () => {
   return (
-      <div>
-         <div class = 'img-slider'>
-           <Room_A/>
-           <Room_B/>
-           <House_A/>
-           <House_B/>
-         </div>
+    <div>
+      <div class ='booking-Head'>
+        <h2>Booking</h2>
       </div>
-
+      <TypeRoom link='/typeRooms/rooma' img='https://media.discordapp.net/attachments/910957790992941129/910961565283520512/luxury-living-room-ideas.jpg?width=960&height=480' text='Room A'/>
+      <TypeRoom link='/typeRooms/roomb' img='https://media.discordapp.net/attachments/910957790992941129/910961561672224848/luxury-apartment-living-room-ideas.jpg?width=960&height=550' text='Room B'/>
+      <TypeRoom link='/typeRooms/housea' img='https://media.discordapp.net/attachments/910957790992941129/910961565694591036/luxury-house-with-pool-design.jpg?width=960&height=540' text='House A'/>
+      <TypeRoom link='/typeRooms/houseb' img='https://media.discordapp.net/attachments/910957790992941129/910961223242240130/modern-home-on-the-coast.jpg?width=960&height=593' text='House B'/>
+    </div>
   );
 };
 

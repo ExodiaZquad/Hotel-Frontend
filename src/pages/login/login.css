@@ -102,7 +102,7 @@
   transition: 0.5s;
 }
 .btn__signup {
-  max-width: 100%;
+  /* max-width: 100%; */
   width: 120px;
   background-color: black;
   border: none;
@@ -202,7 +202,6 @@
   color: #acacac;
   transition: 0.5s;
   font-size: 2rem;
-  padding-left: 1rem;
 }
 .signup__another {
   max-width: 40rem;

@@ -74,7 +74,7 @@ const SignIn = () => {
               <i>
                 <FaUserAlt />
               </i>
-              <input type="text" placeholder="Username" />
+              <input type="email" placeholder="Username" />
             </div>
             <div className="signup__another">
               <i>
@@ -84,6 +84,9 @@ const SignIn = () => {
             </div>
             <button className="btn__signup" onClick={signup__click__signin}>
               Sign up
+            </button>
+            <button className="btn__signin" onClick={signup__click__signin}>
+              Login
             </button>
           </div>
         </div>

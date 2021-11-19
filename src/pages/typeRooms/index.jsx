@@ -84,7 +84,8 @@ const TypeRooms = () => {
     const header = {
       headers: {
         token: token,
-        key: "room_num",
+        type: 3,
+        key: "price",
       },
     };
 

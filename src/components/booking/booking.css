@@ -1,15 +1,15 @@
-.booking-Head h2{
+.booking-Head h2 {
   font-size: 70px;
   text-align: center;
-  margin: 60px;
-  color: #00D3DA;
+  padding: 60px;
+  color: #00d3da;
 }
 
-.booking__link{
+.booking__link {
   text-decoration: none;
 }
 
-.booking__type{
+.booking__type {
   width: 1200px;
   height: 500px;
   position: relative;
@@ -19,13 +19,13 @@
   margin-right: auto;
   text-align: center;
   justify-content: center;
-  align-items:center ;
+  align-items: center;
 }
 
-.booking__info h2{
+.booking__info h2 {
   color: white;
   font-size: 80px;
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
 
 .booking__info .text__info h2 {
@@ -62,19 +62,19 @@
   border-radius: 50px;
 }
 
-@media (max-width: 1400px){
-  .booking-Head h2{
+@media (max-width: 1400px) {
+  .booking-Head h2 {
     font-size: 70px;
     text-align: center;
     margin: 60px;
-    color: #00D3DA;
+    color: #00d3da;
   }
-  
-  .booking__link{
+
+  .booking__link {
     text-decoration: none;
   }
-  
-  .booking__type{
+
+  .booking__type {
     width: 1000px;
     height: 450px;
     position: relative;
@@ -84,30 +84,29 @@
     margin-right: auto;
     text-align: center;
     justify-content: center;
-    align-items:center ;
-  }
-  
-  .booking__info h2{
-    color: white;
-    font-size: 75px;
-    text-transform:uppercase;
+    align-items: center;
   }
 
+  .booking__info h2 {
+    color: white;
+    font-size: 75px;
+    text-transform: uppercase;
+  }
 }
- 
-@media (max-width: 1200px){
-  .booking-Head h2{
+
+@media (max-width: 1200px) {
+  .booking-Head h2 {
     font-size: 65px;
     text-align: center;
     margin: 60px;
-    color: #00D3DA;
+    color: #00d3da;
   }
-  
-  .booking__link{
+
+  .booking__link {
     text-decoration: none;
   }
-  
-  .booking__type{
+
+  .booking__type {
     width: 800px;
     height: 400px;
     position: relative;
@@ -117,30 +116,29 @@
     margin-right: auto;
     text-align: center;
     justify-content: center;
-    align-items:center ;
+    align-items: center;
   }
-  
-  .booking__info h2{
+
+  .booking__info h2 {
     color: white;
     font-size: 70px;
-    text-transform:uppercase;
+    text-transform: uppercase;
   }
- 
 }
 
-@media (max-width: 850px){
-  .booking-Head h2{
+@media (max-width: 850px) {
+  .booking-Head h2 {
     font-size: 55px;
     text-align: center;
     margin: 60px;
-    color: #00D3DA;
+    color: #00d3da;
   }
-  
-  .booking__link{
+
+  .booking__link {
     text-decoration: none;
   }
-  
-  .booking__type{
+
+  .booking__type {
     width: 700px;
     height: 350px;
     position: relative;
@@ -150,17 +148,12 @@
     margin-right: auto;
     text-align: center;
     justify-content: center;
-    align-items:center ;
+    align-items: center;
   }
-  
-  .booking__info h2{
+
+  .booking__info h2 {
     color: white;
     font-size: 65px;
-    text-transform:uppercase;
+    text-transform: uppercase;
   }
 }
-
-
-
-
-      

@@ -6,13 +6,13 @@ const TypeRoom = ({ img, text, link }) => (
   <div className="booking__type">
     <Link className="booking__link" to={link}>
       <div className="booking__info">
-          <div className="text__info">
-            <h2>{text}</h2>
-          </div>
+        <div className="text__info">
+          <h2>{text}</h2>
+        </div>
       </div>
       <div className="booking__hover"></div>
-      <div className = "booking__img">
-          <img src={img} alt="" />
+      <div className="booking__img">
+        <img src={img} alt="" />
       </div>
     </Link>
   </div>
@@ -20,7 +20,7 @@ const TypeRoom = ({ img, text, link }) => (
 
 const Booking = () => {
   return (
-    <div>
+    <div id="booking">
       <div className="booking-Head">
         <h2>Booking</h2>
       </div>

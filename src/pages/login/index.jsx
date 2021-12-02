@@ -80,9 +80,10 @@ const SignIn = () => {
                   name="firstname"
                   value={signUp.firstname}
                   onChange={handleChangeSignUp}
+                  autoComplete="off"
                 />
               </div>
-              <div className="signup__first">
+              <div className="signup__last">
                 <i>
                   <FaUserAlt />
                 </i>
@@ -92,6 +93,7 @@ const SignIn = () => {
                   name="lastname"
                   value={signUp.lastname}
                   onChange={handleChangeSignUp}
+                  autoComplete="off"
                 />
               </div>
             </div>
@@ -100,11 +102,12 @@ const SignIn = () => {
                 <MdEmail />
               </i>
               <input
-                type="text"
+                type="email"
                 placeholder="Email"
                 name="email"
                 value={signUp.email}
                 onChange={handleChangeSignUp}
+                autoComplete="off"
               />
             </div>
             <div className="signup__another">
@@ -117,6 +120,7 @@ const SignIn = () => {
                 name="tel"
                 value={signUp.tel}
                 onChange={handleChangeSignUp}
+                autoComplete="off"
               />
             </div>
             <div className="signup__another">
@@ -129,6 +133,7 @@ const SignIn = () => {
                 name="username"
                 value={signUp.username}
                 onChange={handleChangeSignUp}
+                autoComplete="off"
               />
             </div>
             <div className="signup__another">
@@ -141,6 +146,7 @@ const SignIn = () => {
                 name="password"
                 value={signUp.password}
                 onChange={handleChangeSignUp}
+                autoComplete="off"
               />
             </div>
             <button
@@ -182,7 +188,7 @@ const SignIn = () => {
                 <FaLock />
               </i>
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 name="password"
                 onChange={handleChangeSignIn}

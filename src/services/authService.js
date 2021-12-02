@@ -18,6 +18,11 @@ export const login = async (usernameCheck, passwordCheck) => {
   localStorage.setItem("token", token.access);
 };
 
+export const logout = () => {
+  // const token = localStorage.getItem("token");
+  localStorage.removeItem("token");
+};
+
 export const register = async (data) => {
   const header = {
     user_name: data.username,
@@ -43,6 +48,7 @@ export const isAuthen = () => {
 
 const exportObject = {
   login,
+  logout,
   register,
   isAuthen,
 };

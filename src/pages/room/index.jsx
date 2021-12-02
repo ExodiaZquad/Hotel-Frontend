@@ -75,7 +75,7 @@ const Feature = ({ room }) => {
             </li>
             <li>
               <span>
-                {room.minPerson} - {room.maxPerson} people
+                {room.min_person} - {room.max_person} people
               </span>
             </li>
           </ul>
@@ -220,13 +220,14 @@ const Room = () => {
             {random.map((room) => (
               <Card
                 key={room.pic1}
+                roomId={room.id}
                 roomName={room.room_name}
                 roomType={room.room_type}
                 roomNumber={room.room_num}
                 price={room.price}
                 link={room.pic1}
-                minPerson={room.minPerson}
-                maxPerson={room.maxPerson}
+                minPerson={room.min_person}
+                maxPerson={room.max_person}
               />
             ))}
           </div>

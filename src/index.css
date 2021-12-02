@@ -10,3 +10,44 @@
 html {
   font-size: 62.5%;
 }
+
+/* - Firefox IE10 */
+* {
+  /* scrollbar-color: rgb(88, 89, 91) rgba(0, 0, 0, 0); */
+  /* scrollbar-width: 4px; */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* - Chrome Safari Edge */
+*::-webkit-scrollbar {
+  /* width: 4px !important; */
+  width: 0 !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  /* background: rgb(88, 89, 91); */
+  background: transparent !important;
+  /* border-radius: 4px; */
+}
+*::-webkit-scrollbar-track {
+  box-shadow: none !important;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  /* background: rgb(138, 139, 141); */
+  background: transparent !important;
+}
+
+/*
+ * Disable scrollbar
+ */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

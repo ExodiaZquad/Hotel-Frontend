@@ -1,0 +1,109 @@
+.hero__container {
+  height: 100vh;
+  background-size: cover;
+  background-image: url("https://cdn.discordapp.com/attachments/904607198263509024/904754907838554132/pexels-thanhhoa-tran-1506836.jpg");
+}
+
+.hero__backdrop {
+  background-color: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  position: relative;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3rem;
+}
+
+.navbar__name {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.navbar__content {
+  display: flex;
+}
+
+.navbar__items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  width: 300px;
+  /* transform: scaleX(1.1); */
+}
+
+.navbar__items .navbar__item:not(:first-child) {
+  margin-left: 5rem;
+}
+
+.navbar__item {
+  font-size: 2rem;
+}
+
+.navbar__icon {
+  width: 7rem;
+  height: 7rem;
+  background-size: cover;
+  background-image: url("https://cdn.discordapp.com/attachments/904607198263509024/915881080706461696/ExodiatheForbiddenOne-TF04-JP-VG.jpg");
+
+  border-radius: 50%;
+  margin: 0 5rem;
+}
+
+.underline {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 1px;
+}
+
+.navbar__button {
+  padding: 1rem 4rem;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  font-size: 2rem;
+}
+
+.hero__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__heading {
+  font-size: 7rem;
+  font-weight: 600;
+}
+
+.hero__tagline {
+  width: 80%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.hero__button {
+  margin-top: 5rem;
+  border-radius: 30px;
+  padding: 1.3rem 3rem;
+  font-size: 1.8rem;
+  background-color: #4ad1d5;
+}

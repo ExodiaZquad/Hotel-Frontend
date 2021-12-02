@@ -80,6 +80,7 @@ const TypeRooms = () => {
       token: token,
       type: roomType,
       key: "room_num",
+      isFree: 1,
     },
   });
 

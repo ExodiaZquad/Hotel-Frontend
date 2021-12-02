@@ -22,7 +22,7 @@ const CardNumber = ({ roomNumber }) => (
   <div className="card__number">{roomNumber}</div>
 );
 
-const CardContent = ({ price, roomNumber, roomName, minPerson, maxPerson }) => (
+const CardContent = ({ price, roomName, minPerson, maxPerson, roomId }) => (
   <div className="card__content card__radius">
     <div className="card__name">{roomName}</div>
     <div className="card__detail">
@@ -35,17 +35,18 @@ const CardContent = ({ price, roomNumber, roomName, minPerson, maxPerson }) => (
       <FaMoneyBillAlt size={26} style={{ color: "#bbb" }} />
       <div className="card__detail__text">{price}</div>
     </div>
-    <CardButton roomNumber={roomNumber} roomName={roomName} />
+    <CardButton roomId={roomId} />
   </div>
 );
 
-const CardButton = ({ roomNumber, roomName }) => (
-  <Link to={`/rooms/${roomName}`}>
+const CardButton = ({ roomId }) => (
+  <Link to={`/rooms/${roomId}`}>
     <div className="card__button">Book</div>
   </Link>
 );
 
 const Card = ({
+  roomId,
   roomName,
   roomType,
   roomNumber,
@@ -59,7 +60,7 @@ const Card = ({
       <CardHeader link={link} roomType={roomType} roomNumber={roomNumber} />
       <CardContent
         roomName={roomName}
-        roomNumber={roomNumber}
+        roomId={roomId}
         price={price}
         minPerson={minPerson}
         maxPerson={maxPerson}

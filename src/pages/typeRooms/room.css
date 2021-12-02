@@ -118,15 +118,3 @@
 .form-check-input:checked {
   background-color: #00d3da !important;
 }
-
-.spinner__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40rem;
-}
-
-.spinner-border {
-  width: 5rem !important;
-  height: 5rem !important;
-}

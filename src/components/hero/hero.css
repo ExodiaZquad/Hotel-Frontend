@@ -73,6 +73,10 @@
   bottom: 1px;
 }
 
+.navbar__button__container {
+  cursor: pointer;
+}
+
 .navbar__button {
   padding: 1rem 4rem;
   border: 2px solid #fff;

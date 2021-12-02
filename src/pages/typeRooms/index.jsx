@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import auth from "../../services/authService";
 import Card from "../../components/card";
-import { Spinner } from "react-bootstrap";
+import Loading from "../../components/loading";
 
 import { DropdownButton, Dropdown, Row, Col, Form } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
@@ -72,12 +72,6 @@ const Switch = ({ setFree }) => {
   );
 };
 
-const Loading = () => (
-  <div className="spinner__container">
-    <Spinner animation="border" variant="dark" />
-  </div>
-);
-
 const TypeRooms = () => {
   const token = auth.isAuthen();
   const { id: roomType } = useParams();
@@ -86,6 +80,7 @@ const TypeRooms = () => {
       token: token,
       type: roomType,
       key: "room_num",
+      isFree: 1,
     },
   });
 
@@ -140,6 +135,7 @@ const TypeRooms = () => {
           {data.map((room) => (
             <Card
               key={room.id}
+              roomId={room.id}
               roomName={room.room_name}
               roomType={room.room_type}
               roomNumber={room.room_num}

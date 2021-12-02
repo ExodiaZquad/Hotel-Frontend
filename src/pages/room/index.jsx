@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../../components/card";
-import { Link } from "react-router-dom";
-import { getRoom, getRandomRoom } from "../../services/fakeData";
+import Loading from "../../components/loading";
 import { useParams } from "react-router";
 import { Carousel, Modal, Button } from "react-bootstrap";
 import {
@@ -11,6 +10,7 @@ import {
   FaSwimmer,
   FaArrowLeft,
 } from "react-icons/fa";
+import axios from "axios";
 
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { Calendar, utils } from "react-modern-calendar-datepicker";
@@ -75,7 +75,7 @@ const Feature = ({ room }) => {
             </li>
             <li>
               <span>
-                {room.minPerson} - {room.maxPerson} people
+                {room.min_person} - {room.max_person} people
               </span>
             </li>
           </ul>
@@ -165,46 +165,74 @@ function MyVerticallyCenteredModal(props) {
 
 const Room = () => {
   const { id } = useParams();
-  const room = getRoom(id);
-
+  const [loading, setLoading] = useState(false);
+  const [room, setRoom] = useState([]);
   const [random, setRandom] = useState([]);
 
   useEffect(() => {
-    setRandom(getRandomRoom(id));
+    const header = {
+      headers: {
+        token: localStorage.getItem("token"),
+      },
+    };
+
+    const fetch = async () => {
+      let response = [];
+      setLoading(true);
+      await axios
+        .get(`https://hotel-backend-api.herokuapp.com/api/room/${id}/`, header)
+        .then((res) => (response = res.data))
+        .catch((ex) => console.log(ex));
+
+      console.log(response);
+      setRoom(response[0]);
+      setRandom([response[1], response[2], response[3]]);
+      setLoading(false);
+    };
+    fetch();
+    // setRandom(getRandomRoom(id));
   }, [id]);
+
+  const goBack = () => {
+    window.history.back();
+  };
 
   return (
     <div className="room__overpage">
-      <div className="room__arrow">
-        <Link to="/rooms">
-          <FaArrowLeft />
-          <span className="arrow__text">Back</span>
-        </Link>
+      <div className="room__arrow" onClick={goBack}>
+        <FaArrowLeft />
+        <span className="arrow__text">Back</span>
       </div>
-      <div className="room__page">
-        <div className="room__content">
-          <div className="room__carousal">
-            <MyCarousal room={room[0]} />
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="room__page">
+          <div className="room__content">
+            <div className="room__carousal">
+              <MyCarousal room={room} />
+            </div>
+            <div className="room__detail">
+              <Feature room={room} />
+            </div>
           </div>
-          <div className="room__detail">
-            <Feature room={room[0]} />
+
+          <div className="room__recommend">
+            {random.map((room) => (
+              <Card
+                key={room.pic1}
+                roomId={room.id}
+                roomName={room.room_name}
+                roomType={room.room_type}
+                roomNumber={room.room_num}
+                price={room.price}
+                link={room.pic1}
+                minPerson={room.min_person}
+                maxPerson={room.max_person}
+              />
+            ))}
           </div>
         </div>
-        <div className="room__recommend">
-          {random.map((room) => (
-            <Card
-              key={room.pic1}
-              roomName={room.room_name}
-              roomType={room.room_type}
-              roomNumber={room.room_num}
-              price={room.price}
-              link={room.pic1}
-              minPerson={room.minPerson}
-              maxPerson={room.maxPerson}
-            />
-          ))}
-        </div>
-      </div>
+      )}
     </div>
   );
 };

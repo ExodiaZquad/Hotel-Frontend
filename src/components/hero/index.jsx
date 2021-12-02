@@ -1,38 +1,54 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import auth from "../../services/authService";
 import "./hero.css";
 
-const Navbar = () => (
-  <div className="navbar__container">
-    <div className="navbar__name">Exodia</div>
-    <div className="navbar__content">
-      <div className="navbar__items">
-        <div className="navbar__item">
-          <a href="#home">Home</a>
+const Navbar = () => {
+  const isAuthen = auth.isAuthen();
+
+  const handleLogout = () => {
+    auth.logout();
+    window.location.reload(true);
+  };
+
+  return (
+    <div className="navbar__container">
+      <div className="navbar__name">Exodia</div>
+      <div className="navbar__content">
+        <div className="navbar__items">
+          <div className="navbar__item">
+            <a href="#home">Home</a>
+          </div>
+          <div className="navbar__item">
+            <a href="#service">Service</a>
+          </div>
+          <div className="underline underline--left"></div>
         </div>
-        <div className="navbar__item">
-          <a href="#service">Service</a>
+        <div className="navbar__icon"></div>
+        <div className="navbar__items">
+          <div className="navbar__item">
+            <a href="#booking">Booking</a>
+          </div>
+          <div className="navbar__item">
+            <a href="#contact">Contact</a>
+          </div>
+          <div className="underline underline--right"></div>
         </div>
-        <div className="underline underline--left"></div>
       </div>
-      <div className="navbar__icon"></div>
-      <div className="navbar__items">
-        <div className="navbar__item">
-          <a href="#booking">Booking</a>
+      {isAuthen ? (
+        <div className="navbar__button__container" onClick={handleLogout}>
+          <div className="navbar__button">Logout</div>
         </div>
-        <div className="navbar__item">
-          <a href="#contact">Contact</a>
+      ) : (
+        <div className="navbar__button__container">
+          <Link to="/login">
+            <div className="navbar__button">Login</div>
+          </Link>
         </div>
-        <div className="underline underline--right"></div>
-      </div>
+      )}
     </div>
-    <div className="navbar__button__container">
-      <Link to="/login">
-        <div className="navbar__button">Login</div>
-      </Link>
-    </div>
-  </div>
-);
+  );
+};
 
 const HeroContent = () => (
   <div className="hero__content">

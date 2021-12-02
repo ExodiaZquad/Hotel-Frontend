@@ -12,17 +12,33 @@ function Example() {
 
   return (
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
-      </Button> */}
       <a className="nav_circle" onClick={handleShow}></a>
       <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
-        </Offcanvas.Body>
+      
+        <div className="profile_top">
+          <div className="profile_headText">
+            My Profile
+          </div>
+          <div className="profile_top_image"></div>
+          PlanC
+        </div>
+
+        <div>
+          <ul className="profile_detail">
+            <li>
+              Name :
+            </li>
+            <li>
+              Email :
+            </li>
+            <li>
+              Phone :
+            </li>
+          </ul>
+        </div>
+        
+
+
       </Offcanvas>
     </>
   );

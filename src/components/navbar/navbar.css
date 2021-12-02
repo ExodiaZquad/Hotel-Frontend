@@ -93,8 +93,32 @@
     margin: 4rem;
 }
 
+.profile_top{
+    background-color: rgb(107, 182, 226);
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+.profile_headText{
+    font-size: 2.5rem;
+}
 
+.profile_top_image{
+    background-color: rgb(43, 211, 189);
+    padding: 7rem;
+    border-radius: 50%;
+    border: 0.4rem solid rgb(255, 255, 255);
+    /* display: flex; */
+    /* position:absolute; */
+}
 
- 
+ .profile_detail{
+     text-decoration: none;
+     list-style: none;
+     font-size: 2rem;
+ }
 
 

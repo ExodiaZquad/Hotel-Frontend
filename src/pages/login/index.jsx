@@ -80,6 +80,7 @@ const SignIn = () => {
                   name="firstname"
                   value={signUp.firstname}
                   onChange={handleChangeSignUp}
+                  autoComplete="off"
                 />
               </div>
               <div className="signup__last">
@@ -92,6 +93,7 @@ const SignIn = () => {
                   name="lastname"
                   value={signUp.lastname}
                   onChange={handleChangeSignUp}
+                  autoComplete="off"
                 />
               </div>
             </div>
@@ -105,6 +107,7 @@ const SignIn = () => {
                 name="email"
                 value={signUp.email}
                 onChange={handleChangeSignUp}
+                autoComplete="off"
               />
             </div>
             <div className="signup__another">
@@ -117,6 +120,7 @@ const SignIn = () => {
                 name="tel"
                 value={signUp.tel}
                 onChange={handleChangeSignUp}
+                autoComplete="off"
               />
             </div>
             <div className="signup__another">
@@ -129,6 +133,7 @@ const SignIn = () => {
                 name="username"
                 value={signUp.username}
                 onChange={handleChangeSignUp}
+                autoComplete="off"
               />
             </div>
             <div className="signup__another">
@@ -141,6 +146,7 @@ const SignIn = () => {
                 name="password"
                 value={signUp.password}
                 onChange={handleChangeSignUp}
+                autoComplete="off"
               />
             </div>
             <button

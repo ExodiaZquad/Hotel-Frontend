@@ -82,7 +82,7 @@ const SignIn = () => {
                   onChange={handleChangeSignUp}
                 />
               </div>
-              <div className="signup__first">
+              <div className="signup__last">
                 <i>
                   <FaUserAlt />
                 </i>
@@ -100,7 +100,7 @@ const SignIn = () => {
                 <MdEmail />
               </i>
               <input
-                type="text"
+                type="email"
                 placeholder="Email"
                 name="email"
                 value={signUp.email}
@@ -182,7 +182,7 @@ const SignIn = () => {
                 <FaLock />
               </i>
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 name="password"
                 onChange={handleChangeSignIn}

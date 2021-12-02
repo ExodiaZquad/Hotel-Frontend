@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import "./booking.css";
 
 const TypeRoom = ({ img, text, link }) => (
-  <div className="booking__type">
-    <Link className="booking__link" to={link}>
-      <div className="booking__info">
-        <div className="text__info">
-          <h2>{text}</h2>
+  <Link className="booking__link" to={link}>
+    <div className="booking__type">
+        <div className="booking__info">
+          <div className="text__info">
+            <h2>{text}</h2>
+          </div>
         </div>
-      </div>
-      <div className="booking__hover"></div>
-      <div className="booking__img">
-        <img src={img} alt="" />
-      </div>
-    </Link>
-  </div>
+        <div className="booking__hover"></div>
+        <div className="booking__img">
+          <img src={img} alt="" />
+        </div>
+    </div>
+  </Link>
 );
 
 const Booking = () => {

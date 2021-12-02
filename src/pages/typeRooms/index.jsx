@@ -28,10 +28,16 @@ const SearchBar = ({ setSearch }) => {
   );
 };
 
-const MyDropdown = ({ title, setSortType }) => {
+const MyDropdown = ({ title, setSortType, header, setHeader }) => {
   const dropdownTitle = title;
   const onDropdownSelected = (event) => {
+    let temp = { ...header };
     setSortType(event);
+    if (event === "Price") temp.headers.key = "price";
+    else if (event === "Capacity") temp.headers.key = "min_person";
+    else if (event === "Room Number") temp.headers.key = "room_num";
+    console.log(temp);
+    setHeader(temp);
   };
   return (
     <React.Fragment>
@@ -40,15 +46,9 @@ const MyDropdown = ({ title, setSortType }) => {
         title={dropdownTitle}
         onSelect={onDropdownSelected}
       >
-        <Dropdown.Item href="#/action-1" eventKey="Price">
-          Price
-        </Dropdown.Item>
-        <Dropdown.Item href="#/action-2" eventKey="Capacity">
-          Capacity
-        </Dropdown.Item>
-        <Dropdown.Item href="#/action-3" eventKey="Room Number">
-          Room Number
-        </Dropdown.Item>
+        <Dropdown.Item eventKey="Price">Price</Dropdown.Item>
+        <Dropdown.Item eventKey="Capacity">Capacity</Dropdown.Item>
+        <Dropdown.Item eventKey="Room Number">Room Number</Dropdown.Item>
       </DropdownButton>
     </React.Fragment>
   );
@@ -72,9 +72,23 @@ const Switch = ({ setFree }) => {
   );
 };
 
+const Loading = () => (
+  <div className="spinner__container">
+    <Spinner animation="border" variant="dark" />
+  </div>
+);
+
 const TypeRooms = () => {
+  const token = auth.isAuthen();
   const { id: roomType } = useParams();
-  console.log(roomType);
+  const [header, setHeader] = useState({
+    headers: {
+      token: token,
+      type: roomType,
+      key: "room_num",
+    },
+  });
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -83,33 +97,19 @@ const TypeRooms = () => {
   const [isFree, setFree] = useState(false);
 
   useEffect(() => {
-    const token = auth.isAuthen();
-    const header = {
-      headers: {
-        token: token,
-        type: 3,
-        key: "price",
-      },
-    };
-
     const fetchRoom = async () => {
       setLoading(true);
-      console.log(token);
-      try {
-        const res = await axios.get(
-          "https://hotel-backend-api.herokuapp.com/api/room/sort/",
-          header
-        );
-        setLoading(false);
-        console.log(res.data);
-        setData(res.data);
-      } catch (ex) {
-        console.log(ex);
-      }
+      await axios
+        .get("https://hotel-backend-api.herokuapp.com/api/room/sort/", header)
+        .then((res) => {
+          setLoading(false);
+          setData(res.data);
+        })
+        .catch((ex) => console.log(ex));
     };
 
     fetchRoom();
-  }, []);
+  }, [header]);
 
   return (
     <div className="rooms__background">
@@ -120,7 +120,12 @@ const TypeRooms = () => {
             <SearchBar setSearch={setSearch} />
           </Col>
           <Col sm="3">
-            <MyDropdown title={sortType} setSortType={setSortType} />
+            <MyDropdown
+              title={sortType}
+              setSortType={setSortType}
+              header={header}
+              setHeader={setHeader}
+            />
           </Col>
           <Col>
             <Switch setFree={setFree} />
@@ -128,14 +133,9 @@ const TypeRooms = () => {
         </Row>
       </div>
 
-      {/* {loading && <Spinner animation="border" variant="dark" />} */}
-      {loading && (
-        <div className="spinner__container">
-          <Spinner animation="border" variant="dark" />
-        </div>
-      )}
-
-      {data && (
+      {loading ? (
+        <Loading />
+      ) : (
         <div className="rooms__container">
           {data.map((room) => (
             <Card

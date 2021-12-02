@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import room from "../../assets/img/room.png";
 import { FaUserAlt } from "react-icons/fa";
 import { FaMoneyBillAlt } from "react-icons/fa";
 import "./card.css";

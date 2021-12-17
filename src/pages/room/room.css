@@ -130,3 +130,7 @@
 /* .room__recommend {
   background-color: blue;
 } */
+
+.room__booking__sucessfully {
+  margin: 5rem 0;
+}

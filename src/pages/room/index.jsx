@@ -128,6 +128,9 @@ const BookButton = (id) => {
 };
 
 function MyVerticallyCenteredModal(props) {
+  const [submitLoading, setSubmitLoading] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const todayDate = utils().getToday();
   const maximumDate = { ...todayDate, day: 14 + todayDate.day };
   const [selectedDayRange, setSelectedDayRange] = useState({
@@ -136,6 +139,7 @@ function MyVerticallyCenteredModal(props) {
   });
 
   const onSuccess = async () => {
+    setSubmitLoading(true);
     const header = {
       headers: {
         token: localStorage.getItem("token"),
@@ -147,7 +151,6 @@ function MyVerticallyCenteredModal(props) {
     console.log(id);
     console.log(date);
     console.log(header);
-
     const res = await axios
       .post(
         `https://hotel-backend-api.herokuapp.com/api/room/book/${id}/`,
@@ -157,8 +160,13 @@ function MyVerticallyCenteredModal(props) {
       .catch((ex) => {
         console.log(ex);
       });
+    setIsSubmit(true);
     console.log(res);
-    props.onHide();
+
+    setSubmitLoading(false);
+
+    window.location = "/";
+    // props.onHide();
   };
 
   const isDate = () => {
@@ -202,13 +210,19 @@ function MyVerticallyCenteredModal(props) {
         <Modal.Title id="contained-modal-title-vcenter">Pick Date</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Calendar
-          value={selectedDayRange}
-          onChange={setSelectedDayRange}
-          minimumDate={utils().getToday()}
-          maximumDate={maximumDate}
-          shouldHighlightWeekends
-        />
+        {submitLoading ? (
+          <Loading />
+        ) : isSubmit ? (
+          <h1 className="room__booking__sucessfully">Booking Successfully</h1>
+        ) : (
+          <Calendar
+            value={selectedDayRange}
+            onChange={setSelectedDayRange}
+            minimumDate={utils().getToday()}
+            maximumDate={maximumDate}
+            shouldHighlightWeekends
+          />
+        )}
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={() => onSuccess()}>Book</Button>

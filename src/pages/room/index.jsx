@@ -50,7 +50,7 @@ const MyCarousal = ({ room }) => {
   );
 };
 
-const Feature = ({ room }) => {
+const Feature = ({ room, id }) => {
   return (
     <div className="feature__container">
       <div className="feature__block">
@@ -102,12 +102,12 @@ const Feature = ({ room }) => {
         </div>
       </div>
 
-      <BookButton />
+      <BookButton id={id} />
     </div>
   );
 };
 
-const BookButton = () => {
+const BookButton = (id) => {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
@@ -117,6 +117,7 @@ const BookButton = () => {
       </div>
 
       <MyVerticallyCenteredModal
+        id={id}
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
@@ -125,18 +126,68 @@ const BookButton = () => {
 };
 
 function MyVerticallyCenteredModal(props) {
+  const todayDate = utils().getToday();
+  const maximumDate = { ...todayDate, day: 14 + todayDate.day };
   const [selectedDayRange, setSelectedDayRange] = useState({
     from: null,
     to: null,
   });
 
-  const onSuccess = () => {
-    console.log(selectedDayRange);
+  const onSuccess = async () => {
+    const header = {
+      headers: {
+        token: localStorage.getItem("token"),
+      },
+    };
+
+    const date = isDate();
+    const id = props.id.id;
+    console.log(id);
+    console.log(date);
+    console.log(header);
+
+    const res = await axios
+      .post(
+        `https://hotel-backend-api.herokuapp.com/api/room/book/${id}/`,
+        date,
+        header
+      )
+      .catch((ex) => {
+        console.log(ex);
+      });
+    console.log(res);
+    props.onHide();
   };
 
-  useEffect(() => {
-    // console.log(selectedDayRange);
-  }, [selectedDayRange]);
+  const isDate = () => {
+    let from = selectedDayRange.from;
+    let to = selectedDayRange.to;
+
+    if (to) to = dateToString(to);
+    else to = dateToString(from);
+
+    if (from) from = dateToString(from);
+
+    const dateToApi = { from, to };
+
+    return dateToApi;
+  };
+
+  const dateToString = (date) => {
+    let day = date.day;
+    let month = date.month;
+    let year = date.year;
+
+    if (day < 10) {
+      day = "0" + day.toString();
+    }
+
+    if (month < 10) {
+      month = "0" + month.toString();
+    }
+
+    return year + "-" + month + "-" + day;
+  };
 
   return (
     <Modal
@@ -153,11 +204,12 @@ function MyVerticallyCenteredModal(props) {
           value={selectedDayRange}
           onChange={setSelectedDayRange}
           minimumDate={utils().getToday()}
+          maximumDate={maximumDate}
           shouldHighlightWeekends
         />
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={() => onSuccess()}>Close</Button>
+        <Button onClick={() => onSuccess()}>Book</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -181,7 +233,9 @@ const Room = () => {
       setLoading(true);
       await axios
         .get(`https://hotel-backend-api.herokuapp.com/api/room/${id}/`, header)
-        .then((res) => (response = res.data))
+        .then((res) => {
+          response = res.data;
+        })
         .catch((ex) => console.log(ex));
 
       console.log(response);
@@ -212,24 +266,28 @@ const Room = () => {
               <MyCarousal room={room} />
             </div>
             <div className="room__detail">
-              <Feature room={room} />
+              <Feature room={room} id={id} />
             </div>
           </div>
 
           <div className="room__recommend">
-            {random.map((room) => (
-              <Card
-                key={room.pic1}
-                roomId={room.id}
-                roomName={room.room_name}
-                roomType={room.room_type}
-                roomNumber={room.room_num}
-                price={room.price}
-                link={room.pic1}
-                minPerson={room.min_person}
-                maxPerson={room.max_person}
-              />
-            ))}
+            {random.map((room) =>
+              room ? (
+                <Card
+                  key={room.pic1}
+                  roomId={room.id}
+                  roomName={room.room_name}
+                  roomType={room.room_type}
+                  roomNumber={room.room_num}
+                  price={room.price}
+                  link={room.pic1}
+                  minPerson={room.min_person}
+                  maxPerson={room.max_person}
+                />
+              ) : (
+                <h1>No data</h1>
+              )
+            )}
           </div>
         </div>
       )}

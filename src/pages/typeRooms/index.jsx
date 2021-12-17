@@ -10,9 +10,9 @@ import { FaHome } from "react-icons/fa";
 import axios from "axios";
 import "./room.css";
 
-const SearchBar = ({ setSearch }) => {
+const SearchBar = ({ search, setSearch }) => {
   const onSearch = (message) => {
-    // console.log(message);
+    console.log("message: " + message);
     setSearch(message);
   };
 
@@ -108,6 +108,29 @@ const TypeRooms = () => {
     fetchRoom();
   }, [header]);
 
+  let filtered = data;
+  if (search) {
+    const queryName = filtered.filter((room) =>
+      room.room_name.toLowerCase().includes(search.toLowerCase())
+    );
+
+    const queryNumber = filtered.filter((room) =>
+      room.room_num.toString().includes(search)
+    );
+
+    const queryTypeNumber = filtered.filter((room) => {
+      let roomType = "";
+      if (room.room_type == 1 || room.room_type == 3) roomType = "a";
+      else if (room.room_type == 2 || room.room_type == 4) roomType = "b";
+      const roomTypeNumber = roomType + room.room_num.toString();
+      if (roomTypeNumber.includes(search.toLowerCase())) return room;
+      return null;
+    });
+
+    // filtered = queryName.concat(queryNumber);
+    filtered = [...new Set([...queryNumber, ...queryName, ...queryTypeNumber])];
+  }
+
   return (
     <div className="rooms__background">
       <div className="rooms__goHome">
@@ -117,7 +140,7 @@ const TypeRooms = () => {
       <div className="rooms__filters">
         <Row>
           <Col sm="5" md="4" xl="3">
-            <SearchBar setSearch={setSearch} />
+            <SearchBar serach={search} setSearch={setSearch} />
           </Col>
           <Col sm="3">
             <MyDropdown
@@ -137,7 +160,7 @@ const TypeRooms = () => {
         <Loading />
       ) : (
         <div className="rooms__container">
-          {data.map((room) => (
+          {filtered.map((room) => (
             <Card
               key={room.id}
               roomId={room.id}

@@ -57,8 +57,8 @@ const MyDropdown = ({ title, setSortType, header, setHeader }) => {
 
 const Switch = ({ setFree }) => {
   const onSwitchChange = (event) => {
-    setFree(event.target.checked);
-    // console.log(event.target.checked);
+    if (event.target.checked) setFree(1);
+    else setFree(0);
   };
 
   return (
@@ -76,21 +76,30 @@ const Switch = ({ setFree }) => {
 const TypeRooms = () => {
   const token = auth.isAuthen();
   const { id: roomType } = useParams();
-  const [header, setHeader] = useState({
-    headers: {
-      token: token,
-      type: roomType,
-      key: "room_num",
-      isFree: 1,
-    },
-  });
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const [search, setSearch] = useState("");
   const [sortType, setSortType] = useState("Room Number");
-  const [isFree, setFree] = useState(false);
+  const [isFree, setFree] = useState(0);
+
+  const [header, setHeader] = useState({
+    headers: {
+      token: token,
+      type: roomType,
+      key: "room_num",
+      isFree: isFree,
+    },
+  });
+
+  console.log(isFree);
+
+  useEffect(() => {
+    const headers = { ...header.headers, isFree };
+    setHeader({ ...header, headers });
+    console.log(headers);
+  }, [isFree]);
 
   useEffect(() => {
     const fetchRoom = async () => {
@@ -120,8 +129,8 @@ const TypeRooms = () => {
 
     const queryTypeNumber = filtered.filter((room) => {
       let roomType = "";
-      if (room.room_type == 1 || room.room_type == 3) roomType = "a";
-      else if (room.room_type == 2 || room.room_type == 4) roomType = "b";
+      if (room.room_type === 1 || room.room_type === 3) roomType = "a";
+      else if (room.room_type === 2 || room.room_type === 4) roomType = "b";
       const roomTypeNumber = roomType + room.room_num.toString();
       if (roomTypeNumber.includes(search.toLowerCase())) return room;
       return null;

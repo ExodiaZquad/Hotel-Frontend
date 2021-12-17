@@ -137,3 +137,40 @@
   color: #fff;
   background-color: #27b8bd;
 }
+
+.profile_top{
+  background-color: rgb(107, 182, 226);
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.profile_headText{
+  font-size: 2.5rem;
+}
+
+.profile_top_image{
+  background-color: rgb(43, 211, 189);
+  padding: 7rem;
+  border-radius: 50%;
+  border: 0.4rem solid rgb(255, 255, 255);
+  /* display: flex; */
+  /* position:absolute; */
+}
+
+.profile_detail{
+  margin-top: 2rem;
+   text-decoration: none;
+   list-style: none;
+   font-size: 2rem;
+}
+
+.profile_button{
+  text-align: right;
+}
+
+.profile_butt{
+  margin-left: 1rem;
+}

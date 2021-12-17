@@ -118,3 +118,10 @@
 .form-check-input:checked {
   background-color: #00d3da !important;
 }
+
+.icon--home {
+  position: absolute;
+  font-size: 3.5rem;
+  margin: 1rem;
+  transform: translate(10px, -20px);
+}

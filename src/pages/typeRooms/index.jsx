@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import auth from "../../services/authService";
 import Card from "../../components/card";
 import Loading from "../../components/loading";
 
 import { DropdownButton, Dropdown, Row, Col, Form } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import axios from "axios";
 import "./room.css";
-import { useParams } from "react-router";
 
 const SearchBar = ({ setSearch }) => {
   const onSearch = (message) => {
@@ -109,6 +110,9 @@ const TypeRooms = () => {
 
   return (
     <div className="rooms__background">
+      <div className="rooms__goHome">
+        <FaHome className="icon--home" />
+      </div>
       <div className="rooms__title">Room Supalai A</div>
       <div className="rooms__filters">
         <Row>

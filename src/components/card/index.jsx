@@ -39,11 +39,13 @@ const CardContent = ({ price, roomName, minPerson, maxPerson, roomId }) => (
   </div>
 );
 
-const CardButton = ({ roomId }) => (
-  <Link to={`/rooms/${roomId}`}>
-    <div className="card__button">Book</div>
-  </Link>
-);
+const CardButton = ({ roomId }) => {
+  return (
+    <Link to={`/rooms/${roomId}`}>
+      <div className="card__button">Book</div>
+    </Link>
+  );
+};
 
 const Card = ({
   roomId,

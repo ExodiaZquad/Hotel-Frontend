@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../../components/card";
 import Loading from "../../components/loading";
-import { useParams } from "react-router";
+import { useParams, Redirect } from "react-router";
 import { Carousel, Modal, Button } from "react-bootstrap";
 import {
   FaWifi,
@@ -10,6 +10,8 @@ import {
   FaSwimmer,
   FaArrowLeft,
 } from "react-icons/fa";
+import auth from "../../services/authService";
+
 import axios from "axios";
 
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
@@ -246,6 +248,8 @@ const Room = () => {
     fetch();
     // setRandom(getRandomRoom(id));
   }, [id]);
+
+  if (!auth.isAuthen()) return <Redirect to="/login" />;
 
   const goBack = () => {
     window.history.back();

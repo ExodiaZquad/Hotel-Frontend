@@ -5,9 +5,10 @@ import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
+import LoadingPage from "../../components/loadingPage";
 import "./login.css";
 
-const SignIn = () => {
+const SignIn = ({ setLoading }) => {
   const [account, setAccount] = useState({ username: "", password: "" });
   const [signUp, setSignUp] = useState({
     firstname: "",
@@ -29,9 +30,11 @@ const SignIn = () => {
     e.preventDefault();
 
     try {
+      setLoading(true);
       console.log(account.username, account.password);
       await auth.login(account.username, account.password);
 
+      setLoading(false);
       window.location = "/";
     } catch (ex) {
       console.log(ex);
@@ -47,11 +50,12 @@ const SignIn = () => {
 
   const handleSubmitSignUp = async (e) => {
     e.preventDefault();
-    // console.log(signUp);
+
     try {
       // console.log(account.username, account.password);
+      setLoading(true);
       await auth.register(signUp);
-
+      setLoading(false);
       window.location.reload(true);
     } catch (ex) {
       console.log(ex);
@@ -212,9 +216,15 @@ const SignIn = () => {
 };
 
 const Login = () => {
+  const [loading, setLoading] = useState(false);
   if (auth.isAuthen()) return <Redirect to="/" />;
 
-  return <SignIn />;
+  return loading ? (
+    <LoadingPage />
+  ) : (
+    // <LoadingPage />
+    <SignIn loading={loading} setLoading={setLoading} />
+  );
 };
 
 export default Login;

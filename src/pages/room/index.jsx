@@ -19,6 +19,7 @@ import { Calendar, utils } from "react-modern-calendar-datepicker";
 
 import "./room.css";
 import "./modal.css";
+import { Link } from "react-router-dom";
 
 const MyCarousal = ({ room }) => {
   return (
@@ -265,16 +266,14 @@ const Room = () => {
 
   if (!auth.isAuthen()) return <Redirect to="/login" />;
 
-  const goBack = () => {
-    window.history.back();
-  };
-
   return (
     <div className="room__overpage">
-      <div className="room__arrow" onClick={goBack}>
-        <FaArrowLeft />
-        <span className="arrow__text">Back</span>
-      </div>
+      <Link to={`/typeRooms/${room.room_type}`}>
+        <div className="room__arrow">
+          <FaArrowLeft />
+          <span className="arrow__text">Back</span>
+        </div>
+      </Link>
       {loading ? (
         <Loading />
       ) : (
@@ -301,6 +300,7 @@ const Room = () => {
                   link={room.pic1}
                   minPerson={room.min_person}
                   maxPerson={room.max_person}
+                  disable={room.isFree}
                 />
               ) : (
                 <h1>No data</h1>

@@ -1,0 +1,12 @@
+.loading__page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading__page .spinner-border {
+  width: 20rem !important;
+  height: 20rem !important;
+}

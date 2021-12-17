@@ -1,10 +1,10 @@
-import {React, useState} from 'react';
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import auth from "../../services/authService";
 import "./hero.css";
-import {Offcanvas, Button} from 'react-bootstrap' 
-import {RiPencilFill} from 'react-icons/ri';
-import {GrClose} from 'react-icons/gr';
+import { Offcanvas } from "react-bootstrap";
+import { RiPencilFill } from "react-icons/ri";
+import { GrClose } from "react-icons/gr";
 
 function Show_profile() {
   const [show, setShow] = useState(false);
@@ -14,31 +14,23 @@ function Show_profile() {
 
   return (
     <>
-      <div className="navbar__icon"  onClick={handleShow}></div>
+      <div className="navbar__icon" onClick={handleShow}></div>
       <Offcanvas show={show} onHide={handleClose}>
-      <div className="profile_button">
-        <RiPencilFill size="2.2rem" className="profile_butt"></RiPencilFill>
-        <GrClose size="2.2rem" className="profile_butt"></GrClose>
-      </div>
-      <div className="profile_top">
-          <div className="profile_headText">
-            My Profile
-          </div>
+        <div className="profile_button">
+          <RiPencilFill size="2.2rem" className="profile_butt"></RiPencilFill>
+          <GrClose size="2.2rem" className="profile_butt"></GrClose>
+        </div>
+        <div className="profile_top">
+          <div className="profile_headText">My Profile</div>
           <div className="profile_top_image"></div>
           <div>Username</div>
         </div>
 
         <div>
           <ul className="profile_detail">
-            <li>
-              Name :
-            </li>
-            <li>
-              Email :
-            </li>
-            <li>
-              Phone :
-            </li>
+            <li>Name :</li>
+            <li>Email :</li>
+            <li>Phone :</li>
           </ul>
         </div>
       </Offcanvas>
@@ -67,7 +59,7 @@ const Navbar = () => {
           </div>
           <div className="underline underline--left"></div>
         </div>
-        <Show_profile></Show_profile>
+        <Show_profile />
         <div className="navbar__items">
           <div className="navbar__item">
             <a href="#booking">Booking</a>

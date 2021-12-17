@@ -97,10 +97,10 @@ const TypeRooms = () => {
   console.log(isFree);
 
   let roomTitle = "";
-  if (roomType === "1") roomTitle = "Room A";
-  else if (roomType === "2") roomTitle = "Room B";
-  else if (roomType === "3") roomTitle = "House A";
-  else if (roomType === "4") roomTitle = "House B";
+  if (roomType === "1") roomTitle = "Deluxe Room";
+  else if (roomType === "2") roomTitle = "Luxury Room";
+  else if (roomType === "3") roomTitle = "Alchemy Villa";
+  else if (roomType === "4") roomTitle = "Poker Villa";
 
   useEffect(() => {
     const headers = { ...header.headers, isFree };
@@ -189,6 +189,7 @@ const TypeRooms = () => {
               link={room.pic1}
               minPerson={room.min_person}
               maxPerson={room.max_person}
+              disable={room.isFree}
             />
           ))}
         </div>

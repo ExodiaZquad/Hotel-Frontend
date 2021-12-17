@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import auth from "../../services/authService";
 import Card from "../../components/card";
 import Loading from "../../components/loading";
 
 import { DropdownButton, Dropdown, Row, Col, Form } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
-import { FaHome } from "react-icons/fa";
+import { ImHome } from "react-icons/im";
 import axios from "axios";
 import "./room.css";
 
@@ -95,6 +96,12 @@ const TypeRooms = () => {
 
   console.log(isFree);
 
+  let roomTitle = "";
+  if (roomType === "1") roomTitle = "Room A";
+  else if (roomType === "2") roomTitle = "Room B";
+  else if (roomType === "3") roomTitle = "House A";
+  else if (roomType === "4") roomTitle = "House B";
+
   useEffect(() => {
     const headers = { ...header.headers, isFree };
     setHeader({ ...header, headers });
@@ -143,9 +150,11 @@ const TypeRooms = () => {
   return (
     <div className="rooms__background">
       <div className="rooms__goHome">
-        <FaHome className="icon--home" />
+        <Link to="/home">
+          <ImHome className="icon--home" />
+        </Link>
       </div>
-      <div className="rooms__title">Room Supalai A</div>
+      <div className="rooms__title">{roomTitle}</div>
       <div className="rooms__filters">
         <Row>
           <Col sm="5" md="4" xl="3">

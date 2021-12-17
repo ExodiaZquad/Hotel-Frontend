@@ -141,7 +141,7 @@ const SignIn = () => {
                 <FaLock />
               </i>
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 name="password"
                 value={signUp.password}
@@ -164,7 +164,9 @@ const SignIn = () => {
         </div>
       </div>
       <div className="login__img">
-        <div className="block__img"></div>
+        <div className="block__img">
+          <div className="image__"></div>
+        </div>
       </div>
       <div className="signin__right">
         <div className="signin__container">

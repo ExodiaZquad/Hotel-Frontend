@@ -1,42 +1,133 @@
-import { React, useState } from "react";
+import axios from "axios";
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import auth from "../../services/authService";
 import "./hero.css";
 import { Offcanvas } from "react-bootstrap";
-import { RiPencilFill } from "react-icons/ri";
-import { GrClose } from "react-icons/gr";
 
-function Show_profile() {
+function ShowProfile() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [user, setUser] = useState({});
+  const [bookingHistory, setBookginHistory] = useState([]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const header = {
+        headers: {
+          token: localStorage.getItem("token"),
+        },
+      };
+
+      let res = await axios.get(
+        "https://hotel-backend-api.herokuapp.com/api/user/",
+        header
+      );
+
+      setUser(res.data[0]);
+      res.data.shift();
+      setBookginHistory(res.data);
+    };
+
+    fetch();
+  }, []);
+
+  console.log("user", user);
+  console.log("history", bookingHistory);
+
   return (
     <>
       <div className="navbar__icon" onClick={handleShow}></div>
       <Offcanvas show={show} onHide={handleClose}>
-        <div className="profile_button">
-          <RiPencilFill size="2.2rem" className="profile_butt"></RiPencilFill>
-          <GrClose size="2.2rem" className="profile_butt"></GrClose>
-        </div>
-        <div className="profile_top">
-          <div className="profile_headText">My Profile</div>
-          <div className="profile_top_image"></div>
-          <div>Username</div>
-        </div>
-
-        <div>
-          <ul className="profile_detail">
-            <li>Name :</li>
-            <li>Email :</li>
-            <li>Phone :</li>
-          </ul>
+        <div className="profile__container">
+          <div className="profile__background"></div>
+          <div className="profile__title">MY PROFILE</div>
+          <ProfileUser
+            username={user.user_name}
+            email={user.email}
+            firstName={user.first_name}
+            lastName={user.last_name}
+            tel={user.tel}
+          />
+          <BookingHistory history={bookingHistory} />
         </div>
       </Offcanvas>
     </>
   );
 }
+
+const ProfileUser = ({ username, email, firstName, lastName, tel }) => {
+  return (
+    <div className="profile__user">
+      <div className="profile__img">
+        <img
+          src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG.png"
+          alt=""
+        />
+      </div>
+      <div className="profile__username">{username}</div>
+      <div className="profile__email">{email}</div>
+      <div className="profile__text">Firstname: {firstName}</div>
+      <div className="profile__text">Lastname: {lastName}</div>
+      <div className="profile__text">Telephone: {tel}</div>
+    </div>
+  );
+};
+
+const BookingHistory = ({ history }) => {
+  return (
+    <div className="profile__history">
+      <div className="history__title">Booking History</div>
+      <div className="history__container">
+        {history.map((room) => (
+          <HistoryCard
+            key={room.id}
+            name={room.room_name}
+            type={room.room_type}
+            number={room.room_num}
+            img={room.pic1}
+            from={room.from_date}
+            to={room.exp_date}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const HistoryCard = ({ name, type, number, from, to, img }) => {
+  from = from.split("T")[0];
+  to = to.split("T")[0];
+
+  let newType = "";
+  if (type == 1 || type == 3) newType = "A";
+  else if (type == 2 || type == 4) newType = "B";
+
+  let colorCard = "";
+  if (type == 1) colorCard = "history--yellow";
+  else if (type == 2) colorCard = "history--red";
+  else if (type == 3) colorCard = "history--blue";
+  else if (type == 4) colorCard = "history--green";
+
+  return (
+    <div className={`history__card ${colorCard}`}>
+      <div className="history__img">
+        <img src={img} alt="" />
+      </div>
+      <div className="history__detail">
+        <div className="history__name">
+          {name} {newType}
+          {number}
+        </div>
+        <div className="history__date">From: {from}</div>
+        <div className="history__date">To: {to}</div>
+      </div>
+    </div>
+  );
+};
 
 const Navbar = () => {
   const isAuthen = auth.isAuthen();
@@ -59,7 +150,7 @@ const Navbar = () => {
           </div>
           <div className="underline underline--left"></div>
         </div>
-        <Show_profile />
+        <ShowProfile />
         <div className="navbar__items">
           <div className="navbar__item">
             <a href="#booking">Booking</a>

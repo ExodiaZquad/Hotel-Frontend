@@ -115,10 +115,12 @@ const HistoryCard = ({ name, type, number, from, to, img }) => {
   else if (type == 3) colorCard = "history--blue";
   else if (type == 4) colorCard = "history--green";
 
+  const links = window.location.origin + `/rooms/${img}`;
+
   return (
     <div className={`history__card ${colorCard}`}>
       <div className="history__img">
-        <img src={img} alt="" />
+        <img src={links} alt="" />
       </div>
       <div className="history__detail">
         <div className="history__name">

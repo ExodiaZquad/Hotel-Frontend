@@ -230,7 +230,7 @@ function MyVerticallyCenteredModal(props) {
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={() => onSuccess()}>Book</Button>
+        <Button onClick={() => onSuccess()}>Confirm</Button>
       </Modal.Footer>
     </Modal>
   );

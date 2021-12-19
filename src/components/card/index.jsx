@@ -10,13 +10,15 @@ const CardHeader = ({ link, roomType, roomNumber, disable }) => {
   else if (roomType === 2 || roomType === 4) roomTag += "B";
   roomTag += roomNumber;
 
+  const links = window.location.origin + `/rooms/${link}`;
+
   return (
     <div className="card__header">
       <CardNumber roomNumber={roomTag} />
       {!disable && (
         <div className="card__backdrop card__backdrop--header"></div>
       )}
-      <img src={link} alt="" className="card__img card__radius" />
+      <img src={links} alt="" className="card__img card__radius" />
     </div>
   );
 };

@@ -13,6 +13,7 @@ function ShowProfile() {
 
   const [user, setUser] = useState({});
   const [bookingHistory, setBookginHistory] = useState([]);
+  const isAuthen = auth.isAuthen();
 
   useEffect(() => {
     const fetch = async () => {
@@ -41,20 +42,22 @@ function ShowProfile() {
   return (
     <>
       <div className="navbar__icon" onClick={handleShow}></div>
-      <Offcanvas show={show} onHide={handleClose}>
-        <div className="profile__container">
-          <div className="profile__background"></div>
-          <div className="profile__title">MY PROFILE</div>
-          <ProfileUser
-            username={user.user_name}
-            email={user.email}
-            firstName={user.first_name}
-            lastName={user.last_name}
-            tel={user.tel}
-          />
-          <BookingHistory history={bookingHistory} />
-        </div>
-      </Offcanvas>
+      {isAuthen && (
+        <Offcanvas show={show} onHide={handleClose}>
+          <div className="profile__container">
+            <div className="profile__background"></div>
+            <div className="profile__title">MY PROFILE</div>
+            <ProfileUser
+              username={user.user_name}
+              email={user.email}
+              firstName={user.first_name}
+              lastName={user.last_name}
+              tel={user.tel}
+            />
+            <BookingHistory history={bookingHistory} />
+          </div>
+        </Offcanvas>
+      )}
     </>
   );
 }

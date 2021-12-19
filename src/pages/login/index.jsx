@@ -8,7 +8,13 @@ import { MdEmail } from "react-icons/md";
 import LoadingPage from "../../components/loadingPage";
 import "./login.css";
 
-const SignIn = ({ setLoading }) => {
+const SignIn = ({
+  setLoading,
+  setLoginError,
+  loginError,
+  setSignupError,
+  signupError,
+}) => {
   const [account, setAccount] = useState({ username: "", password: "" });
   const [signUp, setSignUp] = useState({
     firstname: "",
@@ -37,6 +43,8 @@ const SignIn = ({ setLoading }) => {
       setLoading(false);
       window.location = "/";
     } catch (ex) {
+      setLoading(false);
+      setLoginError(true);
       console.log(ex);
     }
   };
@@ -58,6 +66,8 @@ const SignIn = ({ setLoading }) => {
       setLoading(false);
       window.location.reload(true);
     } catch (ex) {
+      setLoading(false);
+      setSignupError(true);
       console.log(ex);
     }
   };
@@ -153,6 +163,7 @@ const SignIn = ({ setLoading }) => {
                 autoComplete="off"
               />
             </div>
+            {signupError && <div className="login__error">Invalid Input.</div>}
             <button
               className="btn__signup"
               onClick={(e) => {
@@ -202,6 +213,9 @@ const SignIn = ({ setLoading }) => {
                 autoComplete="off"
               />
             </div>
+            {loginError && (
+              <div className="login__error">Invalid username or password.</div>
+            )}
             <button className="btn__signin" onClick={handleSubmitSignIn}>
               Sign in
             </button>
@@ -217,13 +231,22 @@ const SignIn = ({ setLoading }) => {
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
+  const [loginError, setLoginError] = useState(false);
+  const [signupError, setSignupError] = useState(false);
+
   if (auth.isAuthen()) return <Redirect to="/" />;
 
   return loading ? (
     <LoadingPage />
   ) : (
-    // <LoadingPage />
-    <SignIn loading={loading} setLoading={setLoading} />
+    <SignIn
+      loading={loading}
+      setLoading={setLoading}
+      loginError={loginError}
+      setLoginError={setLoginError}
+      signupError={signupError}
+      setSignupError={setSignupError}
+    />
   );
 };
 

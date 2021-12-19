@@ -286,3 +286,8 @@
   position: absolute;
   transition: all 0.3s ease-in-out;
 }
+
+.login__error {
+  color: red;
+  font-size: 2rem;
+}

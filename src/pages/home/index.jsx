@@ -1,5 +1,6 @@
 import React from "react";
 import Booking from "../../components/booking/Booking";
+import Contact from "../../components/contact";
 import Hero from "../../components/hero";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div>
       <Hero />
       <Booking />
+      <Contact />
     </div>
   );
 };

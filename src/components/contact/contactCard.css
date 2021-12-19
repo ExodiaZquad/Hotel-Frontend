@@ -1,0 +1,91 @@
+.contact__card li {
+  list-style: none;
+}
+.contact__card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: seashell;
+  margin: 2rem 2rem;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.contact__card .contact__content {
+  position: absolute;
+  bottom: -160px;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: bottom 0.5s;
+  transition-delay: 0.8s;
+}
+
+.contact__card:hover .contact__content {
+  bottom: 0;
+  transition-delay: 0s;
+}
+
+.contact__card .contact__name {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 15px;
+  line-height: 1.5em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition-delay: 0.6s;
+}
+
+.contact__card:hover .contact__name {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.contact__card .contact__section {
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+.contact__card .contact__socialBx {
+  position: relative;
+  bottom: 10px;
+  display: flex;
+}
+
+.contact__card .contact__social {
+  margin: 0 10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.contact__card:hover .contact__social {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact__card .social__1 {
+  transition-delay: 0.2s;
+}
+
+.contact__card .social__2 {
+  transition-delay: 0.4s;
+}
+
+.contact__card .social__3 {
+  transition-delay: 0.6s;
+}

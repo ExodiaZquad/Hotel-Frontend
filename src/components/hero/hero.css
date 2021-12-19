@@ -59,7 +59,7 @@
   width: 7rem;
   height: 7rem;
   background-size: cover;
-  background-image: url("https://cdn.discordapp.com/attachments/904607198263509024/915881080706461696/ExodiatheForbiddenOne-TF04-JP-VG.jpg");
+  background-image: url("https://cdn.discordapp.com/attachments/904607198263509024/921813770521677844/iconfinder-3-avatar-2754579_120516.png");
   border-radius: 50%;
   margin: 0 5rem;
   cursor: pointer;
@@ -128,7 +128,7 @@
 }
 
 .hero__button {
-  margin-top: 5rem;
+  margin-top: 3rem;
   border-radius: 30px;
   padding: 1.3rem 3rem;
   font-size: 1.8rem;

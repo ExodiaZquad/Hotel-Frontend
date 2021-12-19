@@ -1,9 +1,9 @@
 import axios from "axios";
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Offcanvas } from "react-bootstrap";
 import auth from "../../services/authService";
 import "./hero.css";
-import { Offcanvas } from "react-bootstrap";
 
 function ShowProfile() {
   const [show, setShow] = useState(false);
@@ -64,7 +64,7 @@ const ProfileUser = ({ username, email, firstName, lastName, tel }) => {
     <div className="profile__user">
       <div className="profile__img">
         <img
-          src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG.png"
+          src="https://cdn.discordapp.com/attachments/904607198263509024/921813770521677844/iconfinder-3-avatar-2754579_120516.png"
           alt=""
         />
       </div>
@@ -181,7 +181,8 @@ const HeroContent = () => (
     <div className="hero__block">
       <div className="hero__heading">EXODIA RESORT</div>
       <div className="hero__tagline">
-        It is a long established fact that a reader will be distracted by fater
+        Come, stay and enjoy your day. <br />
+        The finest hotel at the best price.
       </div>
 
       <a href="#booking" className="hero__button">

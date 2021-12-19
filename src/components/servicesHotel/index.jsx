@@ -12,8 +12,8 @@ const ServiceBlock = () => (
         <div className="service__block__content">
           <div className="service__block__title">Welcome to Exodia Hotel</div>
           <div className="service__block__detail">
-            Discover new cultures and have a wonderful rest with Backpack Story!
-            Select the country you’d like to visit and provide our agents .
+            The Exodia Hotel is a modern, elegant 5-star hotel overlooking the
+            sea, perfect fo r a romantic, charming vacation,
           </div>
         </div>
         <div className="service__block__img">
@@ -49,10 +49,13 @@ const ServiceBlockReverse = () => (
           alt=""
         />
         <div className="service__block__content">
-          <div className="service__block__title">Welcome to Exodia Hotel</div>
+          <div className="service__block__title">5/5 TripAdvisor Traveller</div>
+          <div className="service__block__review">
+            “Great Place to stay and amazing staff”
+          </div>
           <div className="service__block__detail">
-            Discover new cultures and have a wonderful rest with Backpack Story!
-            Select the country you’d like to visit and provide our agents .
+            My wife and I stayed here for a week. The staff was amazing
+            throughout our stay. The breakfast was good.
           </div>
         </div>
       </div>
@@ -73,7 +76,7 @@ const ServiceRoom = ({ title }) => (
   <div className="service__room">
     <div className="service__room__title">{title}</div>
     <div className="service__room__tagline">
-      We guarantee the best hotels and very comfortable rooms, which will{" "}
+      Provides free Wi-Fi, breakfasts, fitness room and swimming pool.
     </div>
   </div>
 );
@@ -134,7 +137,6 @@ const Service = () => {
       <ServiceBlock />
       <ServiceIconContainer />
       <ServiceRoomContainer />
-
       <ServiceImg />
       <ServiceBlockReverse />
     </div>

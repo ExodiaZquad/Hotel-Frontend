@@ -24,11 +24,19 @@
   font-weight: 700;
 }
 
-.service__block__detail {
-  font-size: 1.8rem;
+.service__block__review {
+  font-size: 2.2rem;
   width: 70%;
   text-align: center;
   font-weight: 300;
+}
+
+.service__block__detail {
+  font-size: 1.8rem;
+  width: 60%;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 1rem;
 }
 
 .service__block__img img {
@@ -148,7 +156,7 @@
 .service__icon {
   background-color: #0ccbd1;
   font-size: 13rem;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 50%;
   color: #fff;
   margin: 0 auto;
@@ -157,5 +165,6 @@
 .service__title {
   text-align: center;
   font-size: 2.3rem;
+  font-weight: 500;
   margin-top: 1rem;
 }

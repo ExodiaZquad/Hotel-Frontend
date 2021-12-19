@@ -137,7 +137,7 @@ function MyVerticallyCenteredModal(props) {
   const [isSubmit, setIsSubmit] = useState(false);
 
   const todayDate = utils().getToday();
-  const maximumDate = { ...todayDate, day: 14 + todayDate.day };
+  // const maximumDate = { ...todayDate, day: 14 + todayDate.day };
   const [selectedDayRange, setSelectedDayRange] = useState({
     from: null,
     to: null,
@@ -224,9 +224,15 @@ function MyVerticallyCenteredModal(props) {
             value={selectedDayRange}
             onChange={setSelectedDayRange}
             minimumDate={utils().getToday()}
-            maximumDate={maximumDate}
             shouldHighlightWeekends
           />
+          // <Calendar
+          //   value={selectedDayRange}
+          //   onChange={setSelectedDayRange}
+          //   minimumDate={utils().getToday()}
+          //   maximumDate={maximumDate}
+          //   shouldHighlightWeekends
+          // />
         )}
       </Modal.Body>
       <Modal.Footer>

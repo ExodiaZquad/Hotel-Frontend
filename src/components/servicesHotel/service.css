@@ -1,0 +1,161 @@
+.service__block__background {
+  background-color: #f5f3f3;
+  position: relative;
+}
+
+.service__block {
+  width: 140rem;
+  margin: 0 auto;
+  padding: 5rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 50fr);
+  justify-items: center;
+}
+
+.service__block__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.service__block__title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.service__block__detail {
+  font-size: 1.8rem;
+  width: 70%;
+  text-align: center;
+  font-weight: 300;
+}
+
+.service__block__img img {
+  width: 50rem;
+}
+
+.service__imgAdd__container {
+  position: relative;
+  height: 20rem;
+}
+
+.service__imgAdd__container img {
+  width: 40rem;
+  position: absolute;
+  left: 65%;
+  top: -70%;
+}
+
+.service__imgAdd__container__reverse {
+  position: relative;
+  height: 20rem;
+  background-color: #f5f3f3;
+}
+
+.service__imgAdd__container__reverse img {
+  width: 40rem;
+  position: absolute;
+  right: 45%;
+  bottom: 30%;
+}
+
+.img__add--reverse {
+  width: 40rem;
+  position: absolute;
+  right: 47%;
+  top: 40%;
+}
+
+.service__block--reverse {
+  height: 50rem;
+  /* padding: 5rem; */
+  width: 170rem;
+}
+
+/* TODO: ROOM */
+
+.service__rooms__container {
+  display: grid;
+  grid-template-columns: repeat(2, 50fr);
+  grid-template-rows: repeat(2, 50fr);
+  width: 120rem;
+  margin: 0 auto;
+}
+
+.service__room {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 8rem;
+}
+
+.service__room__title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service__room__tagline {
+  font-size: 1.8rem;
+  width: 50%;
+  text-align: center;
+  font-weight: 300;
+}
+
+/* TODO: Service IMG */
+
+.service__img__container {
+  width: 120rem;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 8rem;
+}
+
+.service__img__group {
+  display: grid;
+  grid-template-rows: repeat(2, 50fr);
+  grid-template-columns: repeat(2, 50fr);
+  gap: 5rem;
+}
+
+.service__img__group img {
+  width: 40rem;
+}
+
+/* TODO: ICON */
+
+.service__icon__background {
+  height: 30rem;
+}
+
+.service__icon__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100rem;
+  margin: 0 auto;
+}
+
+.service__icon__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.service__icon {
+  background-color: #0ccbd1;
+  font-size: 13rem;
+  padding: 1.5rem;
+  border-radius: 50%;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.service__title {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-top: 1rem;
+}

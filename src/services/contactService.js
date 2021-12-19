@@ -1,8 +1,8 @@
-import nut from "../assets/img/nutchu.jpg";
-import kate from "../assets/img/kate.jpg";
-import zan from "../assets/img/zan.jpg";
-import jus from "../assets/img/jus.jpg";
-import ton from "../assets/img/ton.jpg";
+import nut from "../assets/img/contacts/nutchu.jpg";
+import kate from "../assets/img/contacts/kate.jpg";
+import zan from "../assets/img/contacts/zan.jpg";
+import jus from "../assets/img/contacts/jus.jpg";
+import ton from "../assets/img/contacts/ton.jpg";
 
 export const contacts = [
   {

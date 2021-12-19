@@ -133,7 +133,7 @@ const ServiceIconContainer = () => (
 
 const Service = () => {
   return (
-    <div className="service__container">
+    <div id="service" className="service__container">
       <ServiceBlock />
       <ServiceIconContainer />
       <ServiceRoomContainer />

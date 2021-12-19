@@ -106,14 +106,14 @@ const HistoryCard = ({ name, type, number, from, to, img }) => {
   to = to.split("T")[0];
 
   let newType = "";
-  if (type == 1 || type == 3) newType = "A";
-  else if (type == 2 || type == 4) newType = "B";
+  if (type === 1 || type === 3) newType = "A";
+  else if (type === 2 || type === 4) newType = "B";
 
   let colorCard = "";
-  if (type == 1) colorCard = "history--yellow";
-  else if (type == 2) colorCard = "history--red";
-  else if (type == 3) colorCard = "history--blue";
-  else if (type == 4) colorCard = "history--green";
+  if (type === 1) colorCard = "history--yellow";
+  else if (type === 2) colorCard = "history--red";
+  else if (type === 3) colorCard = "history--blue";
+  else if (type === 4) colorCard = "history--green";
 
   const links = window.location.origin + `/rooms/${img}`;
 

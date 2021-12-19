@@ -94,8 +94,6 @@ const TypeRooms = () => {
     },
   });
 
-  console.log(isFree);
-
   let roomTitle = "";
   if (roomType === "1") roomTitle = "Deluxe Room";
   else if (roomType === "2") roomTitle = "Luxury Room";
@@ -111,6 +109,7 @@ const TypeRooms = () => {
   useEffect(() => {
     const fetchRoom = async () => {
       setLoading(true);
+      checkDate();
       await axios
         .get("https://hotel-backend-api.herokuapp.com/api/room/sort/", header)
         .then((res) => {
@@ -119,6 +118,15 @@ const TypeRooms = () => {
           console.log(res.data);
         })
         .catch((ex) => console.log(ex));
+    };
+
+    const checkDate = async () => {
+      await axios
+        .get(
+          "https://hotel-backend-api.herokuapp.com/api/room/check/date/",
+          header
+        )
+        .then((res) => console.log(res.data));
     };
 
     fetchRoom();

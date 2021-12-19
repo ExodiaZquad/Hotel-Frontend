@@ -103,7 +103,6 @@ const TypeRooms = () => {
   useEffect(() => {
     const headers = { ...header.headers, isFree };
     setHeader({ ...header, headers });
-    console.log(headers);
   }, [isFree]);
 
   useEffect(() => {

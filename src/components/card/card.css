@@ -12,6 +12,9 @@
 .card__header {
   position: relative;
 }
+.card__header img {
+  height: 22.3rem;
+}
 
 .card__number {
   position: absolute;

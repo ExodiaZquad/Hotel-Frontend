@@ -16,7 +16,7 @@ export const contacts = [
   },
   {
     id: "2",
-    name: "Kitsadang Sawangsirpol",
+    name: "Kitsadang Sawangsiripol",
     section: "Backend Developer",
     image: kate,
     facebook: "https://www.facebook.com/kitsadang/",
